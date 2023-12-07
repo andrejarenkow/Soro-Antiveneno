@@ -27,7 +27,7 @@ municipios = gpd.read_file('https://raw.githubusercontent.com/andrejarenkow/geod
 #municipios['geometry'] = municipios['geometry'].simplify(tolerance = 0.02)
 municipios["NM_MUN"] = municipios["NM_MUN"].replace(dicionario)
 
-municipios
+#municipios
 
 soro = 'SALon'
 #Saar, SAB, SAC, SAE, SAEsc, SALon
