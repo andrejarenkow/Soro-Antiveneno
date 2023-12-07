@@ -1,6 +1,7 @@
 import pandas as pd
 import geopandas as gpd
 import plotly.express as px
+import streamlit as st
 
 # Configurações da página
 st.set_page_config(
