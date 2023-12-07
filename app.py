@@ -2,6 +2,20 @@ import pandas as pd
 import geopandas as gpd
 import plotly.express as px
 
+# Configurações da página
+st.set_page_config(
+    page_title="Soro Antiveneno",
+    page_icon="	:snake:",
+    layout="wide",
+    initial_sidebar_state='collapsed'
+) 
+col1, col2, col3 = st.columns([1,4,1])
+
+col1.image('logo_cevs (1).png', width=200)
+col2.title('Soro Antiveneno')
+col3.image('logo_estado (3).png', width=300)
+
+#unificando nomes de municipios
 dicionario = {"Restinga Seca": "Restinga Sêca",
     "Santana do Livramento": "Sant'Ana do Livramento","Santo Antônio Das Missões":"Santo Antônio das Missões", "São Pedro Das Missões":"São Pedro das Missões"}
 
