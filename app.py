@@ -53,7 +53,11 @@ with col4:
     st.plotly_chart(map_fig, use_container_width=True)
 with col5:
     mun_destino = municipios_soro.dropna()['Município destino'].values[0]
-    st.header(f'Município mais próximo: {mun_destino}')
+    distancia = municipios_soro.dropna()['shortest way (km)'].values[0]
+    local = municipios_soro.dropna()['Destination'].values[0]
+    st.subheader(f'Município mais próximo: {mun_destino}')
+    st.subheader(f'Local: {local}')
+    st.subheader(f'Distância: {distancia} km')
     
-municipios_soro
+#municipios_soro
 
