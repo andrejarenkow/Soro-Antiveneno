@@ -37,7 +37,7 @@ with col5:
 filtro = (dados_geral['soro'] == soro)
 
 municipios_soro = municipios.merge(dados_geral[filtro], left_on='NM_MUN', right_on='Origin', how='left')
-municipios_soro
+
 
 map_fig = px.choropleth_mapbox(municipios_soro, geojson=municipios_soro.geometry,
                           locations=municipios_soro.index, color='Município destino',
@@ -52,5 +52,5 @@ with col4:
     st.plotly_chart(map_fig, use_container_width=True)
  
     
-
+municipios_soro
 
