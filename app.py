@@ -60,6 +60,9 @@ map_fig = px.choropleth_mapbox(municipios_soro_destino, geojson=municipios_soro_
                           height = 700, opacity = 0.6,
                         
                         )
+map_fig.update_layout(template='plotly_dark', paper_bgcolor='rgba(0,0,0,0)',
+                                 margin=go.layout.Margin(l=10, r=10, t=10, b=10),
+                              )
 
 with col4: 
     st.plotly_chart(map_fig, use_container_width=True)
@@ -71,5 +74,4 @@ with col5:
     st.write(f'Local: **{local}**')
     st.write(f'Distância: **{distancia} km**')
     
-municipios_soro_destino
 
