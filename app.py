@@ -39,11 +39,12 @@ filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
 
 municipios_soro = municipios.merge(dados_geral[filtro], left_on='NM_MUN', right_on='Origin', how='left')
 
+municipios_soro = municipios_soro.dropna()
 
 map_fig = px.choropleth_mapbox(municipios_soro, geojson=municipios_soro.geometry,
                           locations=municipios_soro.index, color='Município destino',
-                          center ={'lat':-30.452349861219243, 'lon':-53.55320517512141},
-                          zoom=5.5,
+                          center ={'lat':municipios_soro['geometry'].centroid.y, 'lon':municipios_soro['geometry'].centroid.x},
+                          zoom=8,
                           mapbox_style="open-street-map",
                           hover_name='NM_MUN',
                           hover_data =['Destination', 'Município destino'],
