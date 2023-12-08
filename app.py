@@ -59,5 +59,5 @@ with col5:
     st.write(f'Local: **{local}**')
     st.write(f'Distância: **{distancia} km**')
     
-#municipios_soro
+municipios_soro.dropna()
 
