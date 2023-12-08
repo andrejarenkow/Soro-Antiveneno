@@ -46,6 +46,7 @@ filtro_destino = (dados_geral['Origin'] == mun_destino)
 municipio_destino = municipios.merge(dados_geral[filtro_destino], left_on='NM_MUN', right_on='Origin', how='left')
 
 municipios_soro_destino = pd.concat([municipio_destino, municipios_soro])
+municipios_soro_destino = municipios_soro_destino.dropna()
 
 map_fig = px.choropleth_mapbox(municipios_soro_destino, geojson=municipios_soro_destino.geometry,
                           locations=municipios_soro_destino.index, color='Município destino',
