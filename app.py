@@ -57,7 +57,7 @@ map_fig = px.choropleth_mapbox(municipios_soro_destino, geojson=municipios_soro_
                           hover_name='NM_MUN',
                           hover_data =['Destination', 'Município destino'],
                           color_discrete_sequence = ['red', 'green'],
-                          height = 800, opacity = 0.6,
+                          height = 500, opacity = 0.6,
                         
                         )
 
