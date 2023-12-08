@@ -33,10 +33,9 @@ with col5:
     soro = st.selectbox('Selecione o Soro Antiveneno', dados_geral['soro'].unique())
     mun_origem = st.selectbox('Selecione o município de partida', sorted(municipios['NM_MUN'].unique()))
     
-    
-    
-filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
 
+#Filtro destino
+filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
 municipios_soro = municipios.merge(dados_geral[filtro], left_on='NM_MUN', right_on='Origin', how='left')
 municipios_soro['Legenda'] = 'Origem'
 
@@ -57,7 +56,9 @@ map_fig = px.choropleth_mapbox(municipios_soro_destino, geojson=municipios_soro_
                           mapbox_style="open-street-map",
                           hover_name='NM_MUN',
                           hover_data =['Destination', 'Município destino'],
+                          color_discrete_sequence = ['red', 'green']
                           height = 800,
+                        
                         )
 
 with col4: 
