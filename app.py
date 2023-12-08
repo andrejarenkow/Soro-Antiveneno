@@ -24,13 +24,12 @@ dicionario = {"Restinga Seca": "Restinga Sêca",
 dados_geral = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTeWn7SmYQbdwulQtkslW2OeNEV-XGEPVcAnlUI1QnnstfjxpUgHgSl3cOrUsX0qlJ6Q9Ef7MvPAUOf/pub?gid=669334724&single=true&output=csv')
 
 municipios = gpd.read_file('https://raw.githubusercontent.com/andrejarenkow/geodata/main/municipios_rs_CRS/RS_Municipios_2021.json')
-#municipios['geometry'] = municipios['geometry'].simplify(tolerance = 0.02)
+municipios['geometry'] = municipios['geometry'].simplify(tolerance = 0.01)
 municipios["NM_MUN"] = municipios["NM_MUN"].replace(dicionario)
 
 #municipios
 
-soro = 'SALon'
-#Saar, SAB, SAC, SAE, SAEsc, SALon
+soro = st.selectbox('Selecione o Soro Antiveneno', dados_geral['soro'].unique())
 filtro = (dados_geral['soro'] == soro)
 
 municipios_soro = municipios.merge(dados_geral[filtro], left_on='NM_MUN', right_on='Origin', how='left')
@@ -44,4 +43,4 @@ map_fig = px.choropleth_mapbox(municipios_soro, geojson=municipios_soro.geometry
                           hover_name='NM_MUN',
                           hover_data =['Destination', 'Município destino'],)
 
-map_fig
+st.plotly_chart(map_fig, use_container_width=True)
