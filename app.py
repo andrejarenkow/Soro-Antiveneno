@@ -31,7 +31,7 @@ municipios["NM_MUN"] = municipios["NM_MUN"].replace(dicionario)
 col4, col5 = st.columns([3,2]) 
 with col5:
     soro = st.selectbox('Selecione o Soro Antiveneno', dados_geral['soro'].unique())
-    mun_origem = st.selectbox('Selecione o município de partida', sorted(dados_geral['NM_MUN'].unique()))
+    mun_origem = st.selectbox('Selecione o município de partida', sorted(municipios['NM_MUN'].unique()))
     
 filtro = (dados_geral['soro'] == soro)
 
