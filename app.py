@@ -33,9 +33,11 @@ with col5:
     soro = st.selectbox('Selecione o Soro Antiveneno', dados_geral['soro'].unique())
     mun_origem = st.selectbox('Selecione o município de partida', sorted(municipios['NM_MUN'].unique()))
     
+    
 filtro = (dados_geral['soro'] == soro)
 
 municipios_soro = municipios.merge(dados_geral[filtro], left_on='NM_MUN', right_on='Origin', how='left')
+municipios_soro
 
 map_fig = px.choropleth_mapbox(municipios_soro, geojson=municipios_soro.geometry,
                           locations=municipios_soro.index, color='Município destino',
