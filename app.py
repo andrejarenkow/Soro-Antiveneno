@@ -40,9 +40,14 @@ filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
 municipios_soro = municipios.merge(dados_geral[filtro], left_on='NM_MUN', right_on='Origin', how='left')
 
 municipios_soro = municipios_soro.dropna()
-municipios_soro['cor']='red'
 
-map_fig = px.choropleth_mapbox(municipios_soro, geojson=municipios_soro.geometry,
+mun_destino = municipios_soro.dropna()['Município destino'].values[0]
+filtro_destino = (dados_geral['Origin'] == mun_destino)
+municipio_destino = municipios.merge(dados_geral[filtro_destino], left_on='NM_MUN', right_on='Origin', how='left')
+
+municipios_soro_destino = pd.concat([municipio_destino, municipios_soro])
+
+map_fig = px.choropleth_mapbox(municipios_soro_destino, geojson=municipios_soro.geometry,
                           locations=municipios_soro.index, color='cor',
                           center ={'lat':municipios_soro.geometry.centroid.y.values[0], 'lon':municipios_soro.geometry.centroid.x.values[0]},
                           zoom=8,
