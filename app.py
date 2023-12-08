@@ -55,8 +55,8 @@ with col5:
     mun_destino = municipios_soro.dropna()['Município destino'].values[0]
     distancia = municipios_soro.dropna()['shortest way (km)'].values[0]
     local = municipios_soro.dropna()['Destination'].values[0]
-    st.subheader(f'Município mais próximo: {mun_destino}')
-    st.subheader(f'Local: {local}')
+    st.write(f'Município mais próximo: {mun_destino}')
+    st.markdown(f'Local: {local}')
     st.subheader(f'Distância: {distancia} km')
     
 #municipios_soro
