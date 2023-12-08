@@ -28,12 +28,12 @@ municipios['geometry'] = municipios['geometry'].simplify(tolerance = 0.01)
 municipios["NM_MUN"] = municipios["NM_MUN"].replace(dicionario)
 
 #municipios
-
-soro = st.selectbox('Selecione o Soro Antiveneno', dados_geral['soro'].unique())
+col4, col5 = st.columns([3,2]) 
+with col5:
+    soro = st.selectbox('Selecione o Soro Antiveneno', dados_geral['soro'].unique())
 filtro = (dados_geral['soro'] == soro)
 
 municipios_soro = municipios.merge(dados_geral[filtro], left_on='NM_MUN', right_on='Origin', how='left')
-
 
 map_fig = px.choropleth_mapbox(municipios_soro, geojson=municipios_soro.geometry,
                           locations=municipios_soro.index, color='Município destino',
@@ -44,4 +44,9 @@ map_fig = px.choropleth_mapbox(municipios_soro, geojson=municipios_soro.geometry
                           hover_data =['Destination', 'Município destino'],
                               height = 800)
 
-st.plotly_chart(map_fig, use_container_width=True)
+with col4: 
+    st.plotly_chart(map_fig, use_container_width=True)
+ 
+    
+
+
