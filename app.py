@@ -45,7 +45,7 @@ municipios_soro = municipios_soro.dropna()
 mun_destino = municipios_soro.dropna()['Município destino'].values[0]
 filtro_destino = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_destino)
 municipio_destino = municipios.merge(dados_geral[filtro_destino], left_on='NM_MUN', right_on='Origin', how='left')
-municipios_soro['Legenda'] = 'Destino'
+municipio_destino['Legenda'] = 'Destino'
 
 municipios_soro_destino = pd.concat([municipio_destino, municipios_soro])
 municipios_soro_destino = municipios_soro_destino.dropna()
