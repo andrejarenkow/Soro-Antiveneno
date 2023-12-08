@@ -7,7 +7,7 @@ import streamlit as st
 st.set_page_config(
     page_title="Soro Antiveneno",
     page_icon="	:snake:",
-    layout="wide",
+    #layout="wide",
     initial_sidebar_state='collapsed'
 ) 
 col1, col2, col3 = st.columns([1,4,1])
