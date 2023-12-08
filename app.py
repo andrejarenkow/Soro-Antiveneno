@@ -2,6 +2,7 @@ import pandas as pd
 import geopandas as gpd
 import plotly.express as px
 import streamlit as st
+import plotly.graph_objects as go
 
 # Configurações da página
 st.set_page_config(
