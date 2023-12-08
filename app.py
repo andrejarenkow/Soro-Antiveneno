@@ -28,7 +28,7 @@ municipios['geometry'] = municipios['geometry'].simplify(tolerance = 0.01)
 municipios["NM_MUN"] = municipios["NM_MUN"].replace(dicionario)
 
 #municipios
-col5, col4 = st.columns([3,2]) 
+col5, col4 = st.columns([2, 4]) 
 with col5:
     soro = st.selectbox('Selecione o Soro Antiveneno', dados_geral['soro'].unique())
     mun_origem = st.selectbox('Selecione o município de partida', sorted(municipios['NM_MUN'].unique()))
