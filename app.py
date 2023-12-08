@@ -48,7 +48,8 @@ map_fig = px.choropleth_mapbox(municipios_soro, geojson=municipios_soro.geometry
                           mapbox_style="open-street-map",
                           hover_name='NM_MUN',
                           hover_data =['Destination', 'Município destino'],
-                              height = 800)
+                              height = 800,
+                              opacity=0.5)
 
 with col4: 
     st.plotly_chart(map_fig, use_container_width=True)
