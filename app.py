@@ -34,6 +34,7 @@ with col5:
     mun_origem = st.selectbox('Selecione o município de partida', sorted(municipios['NM_MUN'].unique()))
     
     
+    
 filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
 
 municipios_soro = municipios.merge(dados_geral[filtro], left_on='NM_MUN', right_on='Origin', how='left')
@@ -50,7 +51,9 @@ map_fig = px.choropleth_mapbox(municipios_soro, geojson=municipios_soro.geometry
 
 with col4: 
     st.plotly_chart(map_fig, use_container_width=True)
- 
+with col5:
+    mun_destino = municipios_soro.dropna()['Município destino'].values[0]
+    st.header(f'Município mais próximo {mun_destino}')
     
 municipios_soro
 
