@@ -8,7 +8,7 @@ import requests
 
 # Configurações da página
 st.set_page_config(
-    page_title="Soro Antiveneno",
+    page_title="Buscador de soros antiveneno",
     page_icon="	:snake:",
     layout="wide",
     initial_sidebar_state='collapsed'
@@ -66,7 +66,8 @@ except:
      pass
 #municipios
 col5, col4 = st.columns([2, 4]) 
-with col5:    
+with col5:  
+    animal = st.radio("Por qual animal você foi picado?", dados_geral['Animal'].unique(), index=None)
     soro = st.selectbox('Soro Antiveneno', dados_geral['soro'].unique(), index=None, placeholder="Selecione o Soro Antiveneno")
     container = st.container(border=True)
     with container: 
