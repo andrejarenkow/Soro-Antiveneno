@@ -20,19 +20,21 @@ col2.title('Soro Antiveneno')
 col3.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_estado%20(3).png?raw=true', width=300)
 
 e = RuntimeError('Aguardando até sua localização estar habilitada para a página.')
-st.exception(e)
 
 if st.checkbox('Buscar minha localização atual!'):
-    loc = streamlit_js_eval.get_geolocation()
-    location_json = streamlit_js_eval.get_page_location()
-    lat = str(loc['coords']['latitude'])
-    long = str(loc['coords']['longitude'])
-    url = f'https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={long}'
-    localizacao_usuario = requests.get(url)
-    loc_usuario = localizacao_usuario.text
-    index_inicio = loc_usuario.find('"city":')
-    index_fim = loc_usuario.find(',"municipality"')
-    municipio_do_usuario = loc_usuario[index_inicio+8:index_fim-1]
+    try:
+        loc = streamlit_js_eval.get_geolocation()
+        location_json = streamlit_js_eval.get_page_location()
+        lat = str(loc['coords']['latitude'])
+        long = str(loc['coords']['longitude'])
+        url = f'https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={long}'
+        localizacao_usuario = requests.get(url)
+        loc_usuario = localizacao_usuario.text
+        index_inicio = loc_usuario.find('"city":')
+        index_fim = loc_usuario.find(',"municipality"')
+        municipio_do_usuario = loc_usuario[index_inicio+8:index_fim-1]
+    except:
+        st.exception(e)
 else:
     municipio_do_usuario = ''
 #unificando nomes de municipios
