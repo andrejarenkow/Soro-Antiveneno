@@ -76,7 +76,7 @@ with col5:
         except: 
             st.write("")
 
-    mun_origem = st.selectbox('Município de partida', lista_mun_distinct, index=None, placeholder="Selecione o município de partida")
+    mun_origem = st.selectbox('Municpipio onde está o paciente', lista_mun_distinct, index=None, placeholder="Selecione o município onde está o paciente")
     if mun_origem==municipio_do_usuario:
         mun_origem = municipio_do_usuario
 try:
@@ -119,7 +119,7 @@ try:
         local = municipios_soro.dropna()['Destination'].values[0]
         container_respostas = st.container(border=True)
         with container_respostas: 
-            st.write(f'Município mais próximo: **{mun_destino}**')
+            st.write(f'Município onde está o soro mais próximo: **{mun_destino}**')
             st.write(f'Local: **{local}**')
             st.write(f'Distância: **{distancia} km**')
 
