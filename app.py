@@ -19,6 +19,17 @@ col1.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_cev
 col2.title('Soro Antiveneno')
 col3.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_estado%20(3).png?raw=true', width=300)
 
+#dicionario soros
+dicionario_explicacao = {
+    "SAB - Soro antibotrópico" : "Esse antídoto é usado para tratamento de envenenamento por serpentes do gênero Bothrops sp. No Rio Grande do Sul encontramos: Bothrops jararaca (jararaca), Bothrops pubescens (jararaca-pintada), Bothrops alternatus (cruzeira), Bothrops diporus (jararaca-pintada) e Bothrops cotiara (cotiara)",
+    "SAC - Soro anticrotálico" : "Esse antídoto é usado para tratamento de envenenamento por serpentes do gênero Crotalus sp. No Rio Grande do Sul temos a Crotalus durissus (cascavel).";
+    "SAEl - Soro antielapídico" : "Esse antídoto é usado para tratamento de envenenamento por serpentes do gênero Micrurus sp. No Rio Grande do Sul encontramos a Micrurus altirostris (coral-verdadeira).";
+    "SAEsc - Soro antiescorpiônico" : "Esse antídoto é usado para tratamento de envenenamento por escorpiões do gênero Tityus sp. No Rio Grande do Sul, é utilizado principalmente para tratamento de envenenamento por Tityus serrulatus (escorpião-amarelo).";
+    "SAAr - Soro antiaracnídico" : "Esse antídoto é usado para tratamento de envenenamento por aranhas dos gêneros Phoneutria sp. (aranha-armadeira), Loxosceles sp (aranha-marrom), e escorpiões do gênero Tityus sp.";
+    "SALon - Soro antilonômico" : "Esse antídoto é usado para tratamento de envenenamento por lagartas do gênero Lonomia sp. (taturana)."
+}
+
+
 if st.checkbox('Buscar minha localização atual!'):
     try:
         loc = streamlit_js_eval.get_geolocation()
@@ -57,6 +68,8 @@ except:
 col5, col4 = st.columns([2, 4]) 
 with col5:    
     soro = st.selectbox('Selecione o Soro Antiveneno', dados_geral['soro'].unique())
+    st.write(soro, dicionario_explicacao[soro])
+
     mun_origem = st.selectbox('Selecione o município de partida', lista_mun_distinct)
     if mun_origem==municipio_do_usuario:
         mun_origem = municipio_do_usuario
