@@ -12,12 +12,7 @@ st.set_page_config(
     page_icon="	:snake:",
     layout="wide",
     initial_sidebar_state='collapsed'
-) 
-col1, col2, col3 = st.columns([1,4,1])
-
-col1.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_cevs%20(1).png?raw=true', width=200)
-col2.title('Soro Antiveneno')
-col3.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_estado%20(3).png?raw=true', width=300)
+)
 
 loc = streamlit_js_eval.get_geolocation()
 location_json = streamlit_js_eval.get_page_location()
@@ -29,6 +24,12 @@ loc_usuario = localizacao_usuario.text
 index_inicio = loc_usuario.find('"city":')
 index_fim = loc_usuario.find(',"municipality"')
 municipio_do_usuario = loc_usuario[index_inicio+8:index_fim-1]
+
+col1, col2, col3 = st.columns([1,4,1])
+
+col1.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_cevs%20(1).png?raw=true', width=200)
+col2.title('Soro Antiveneno')
+col3.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_estado%20(3).png?raw=true', width=300)
 
 #unificando nomes de municipios
 dicionario = {"Restinga Seca": "Restinga Sêca",
