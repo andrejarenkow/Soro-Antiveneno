@@ -19,6 +19,9 @@ col1.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_cev
 col2.title('Soro Antiveneno')
 col3.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_estado%20(3).png?raw=true', width=300)
 
+e = RuntimeError('Aguardando até sua localização estar habilitada para a página.')
+st.exception(e)
+
 if st.checkbox('Buscar minha localização atual!'):
     loc = streamlit_js_eval.get_geolocation()
     location_json = streamlit_js_eval.get_page_location()
