@@ -68,7 +68,7 @@ except:
 col5, col4 = st.columns([2, 4]) 
 with col5:  
     animal = st.radio("Por qual animal você foi picado?", dados_geral['Animal'].unique(), index=None)
-    soro = st.selectbox('Soro Antiveneno', dados_geral['soro'].unique(), index=None, placeholder="Selecione o Soro Antiveneno")
+    soro = st.selectbox('Soro Antiveneno', dados_geral[dados_geral['Animal']==animal]['soro'].unique(), index=None, placeholder="Selecione o Soro Antiveneno")
     container = st.container(border=True)
     with container: 
         try: 
