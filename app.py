@@ -15,7 +15,7 @@ st.set_page_config(
 )
 
 loc = streamlit_js_eval.get_geolocation()
-location_json = streamlit_js_eval.get_page_location()
+#location_json = streamlit_js_eval.get_page_location()
 lat = str(loc['coords']['latitude'])
 long = str(loc['coords']['longitude'])
 url = f'https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={long}'
