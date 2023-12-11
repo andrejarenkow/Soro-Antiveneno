@@ -3,6 +3,7 @@ import geopandas as gpd
 import plotly.express as px
 import streamlit as st
 import plotly.graph_objects as go
+import streamlit_js_eval
 
 # Configurações da página
 st.set_page_config(
@@ -16,6 +17,17 @@ col1, col2, col3 = st.columns([1,4,1])
 col1.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_cevs%20(1).png?raw=true', width=200)
 col2.title('Soro Antiveneno')
 col3.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_estado%20(3).png?raw=true', width=300)
+
+loc = streamlit_js_eval.get_geolocation()
+location_json = streamlit_js_eval.get_page_location()
+lat = str(loc['coords']['latitude'])
+long = str(loc['coords']['longitude'])
+url = f'https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={long}'
+localizacao_usuario = requests.get(url)
+loc_usuario = localizacao_usuario.text
+index_inicio = loc_usuario.find('"city":')
+index_fim = loc_usuario.find(',"municipality"')
+municipio_do_usuario = loc_usuario[index_inicio+8:index_fim-1]
 
 #unificando nomes de municipios
 dicionario = {"Restinga Seca": "Restinga Sêca",
@@ -31,10 +43,13 @@ municipios["NM_MUN"] = municipios["NM_MUN"].replace(dicionario)
 #municipios
 col5, col4 = st.columns([2, 4]) 
 with col5:
+    lista_mun_distinct = sorted(municipios['NM_MUN'].unique())
+    lista_mun_distinct.append('Selecione')
     soro = st.selectbox('Selecione o Soro Antiveneno', dados_geral['soro'].unique())
-    mun_origem = st.selectbox('Selecione o município de partida', sorted(municipios['NM_MUN'].unique()))
-    
-
+    mun_origem = st.selectbox('Selecione o município de partida', lista_mun_distinct)
+    if mun_origem=='Selecione':
+        mun_origem = municipio_do_usuario
+        
 #Filtro destino
 filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
 municipios_soro = municipios.merge(dados_geral[filtro], left_on='NM_MUN', right_on='Origin', how='left')
