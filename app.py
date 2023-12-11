@@ -75,46 +75,52 @@ with col5:
         except: 
             st.write("")
 
-    mun_origem = st.selectbox('Selecione o município de partida', lista_mun_distinct)
+    mun_origem = st.selectbox('Município de partida', lista_mun_distinct, index=None, placeholder="Selecione o município de partida")
     if mun_origem==municipio_do_usuario:
         mun_origem = municipio_do_usuario
+try:
         
-#Filtro destino
-filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
-municipios_soro = municipios.merge(dados_geral[filtro], left_on='NM_MUN', right_on='Origin', how='left')
-municipios_soro['Legenda'] = 'Origem'
-
-municipios_soro = municipios_soro.dropna()
-
-mun_destino = municipios_soro.dropna()['Município destino'].values[0]
-filtro_destino = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_destino)
-municipio_destino = municipios.merge(dados_geral[filtro_destino], left_on='NM_MUN', right_on='Origin', how='left')
-municipio_destino['Legenda'] = 'Destino'
-
-municipios_soro_destino = pd.concat([municipio_destino, municipios_soro])
-municipios_soro_destino = municipios_soro_destino.dropna()
-
-map_fig = px.choropleth_mapbox(municipios_soro_destino, geojson=municipios_soro_destino.geometry,
-                          locations=municipios_soro_destino.index, color='Legenda',
-                          center ={'lat':municipios_soro_destino.geometry.centroid.y.values[0], 'lon':municipios_soro_destino.geometry.centroid.x.values[0]},
-                          zoom=7.5,
-                          mapbox_style="open-street-map",
-                          hover_name='NM_MUN',
-                          hover_data =['Destination', 'Município destino'],
-                          color_discrete_sequence = ['red', 'green'],
-                          height = 600, opacity = 0.6,)
-map_fig.update_layout(template='plotly_dark', paper_bgcolor='rgba(0,0,0,0)', 
-                      margin=go.layout.Margin(l=10, r=10, t=10, b=10),
-                     )
-
-with col4: 
-        st.plotly_chart(map_fig, use_container_width=True)
-with col5:
+    #Filtro destino
+    filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
+    municipios_soro = municipios.merge(dados_geral[filtro], left_on='NM_MUN', right_on='Origin', how='left')
+    municipios_soro['Legenda'] = 'Origem'
+    
+    municipios_soro = municipios_soro.dropna()
+    
     mun_destino = municipios_soro.dropna()['Município destino'].values[0]
-    distancia = municipios_soro.dropna()['shortest way (km)'].values[0]
-    local = municipios_soro.dropna()['Destination'].values[0]
-    container_respostas = st.container(border=True)
-    with container_respostas: 
-        st.write(f'Município mais próximo: **{mun_destino}**')
-        st.write(f'Local: **{local}**')
-        st.write(f'Distância: **{distancia} km**')
+        
+    filtro_destino = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_destino)
+    municipio_destino = municipios.merge(dados_geral[filtro_destino], left_on='NM_MUN', right_on='Origin', how='left')
+    municipio_destino['Legenda'] = 'Destino'
+    
+    municipios_soro_destino = pd.concat([municipio_destino, municipios_soro])
+    municipios_soro_destino = municipios_soro_destino.dropna()
+    
+    map_fig = px.choropleth_mapbox(municipios_soro_destino, geojson=municipios_soro_destino.geometry,
+                              locations=municipios_soro_destino.index, color='Legenda',
+                              center ={'lat':municipios_soro_destino.geometry.centroid.y.values[0], 'lon':municipios_soro_destino.geometry.centroid.x.values[0]},
+                              zoom=7.5,
+                              mapbox_style="open-street-map",
+                              hover_name='NM_MUN',
+                              hover_data =['Destination', 'Município destino'],
+                              color_discrete_sequence = ['red', 'green'],
+                              height = 600, opacity = 0.6,)
+    map_fig.update_layout(template='plotly_dark', paper_bgcolor='rgba(0,0,0,0)', 
+                          margin=go.layout.Margin(l=10, r=10, t=10, b=10),
+                         )
+    
+    
+    with col4: 
+            st.plotly_chart(map_fig, use_container_width=True)
+    with col5:
+        mun_destino = municipios_soro.dropna()['Município destino'].values[0]
+        distancia = municipios_soro.dropna()['shortest way (km)'].values[0]
+        local = municipios_soro.dropna()['Destination'].values[0]
+        container_respostas = st.container(border=True)
+        with container_respostas: 
+            st.write(f'Município mais próximo: **{mun_destino}**')
+            st.write(f'Local: **{local}**')
+            st.write(f'Distância: **{distancia} km**')
+
+except: 
+    st.write("")
