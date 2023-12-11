@@ -4,6 +4,7 @@ import plotly.express as px
 import streamlit as st
 import plotly.graph_objects as go
 import streamlit_js_eval
+import requests
 
 # Configurações da página
 st.set_page_config(
@@ -22,7 +23,9 @@ loc = streamlit_js_eval.get_geolocation()
 location_json = streamlit_js_eval.get_page_location()
 loc
 lat = str(loc['coords']['latitude'])
+lat
 long = str(loc['coords']['longitude'])
+long
 url = f'https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={long}'
 localizacao_usuario = requests.get(url)
 loc_usuario = localizacao_usuario.text
