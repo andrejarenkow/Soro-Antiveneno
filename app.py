@@ -66,6 +66,7 @@ map_fig.update_layout(template='plotly_dark', paper_bgcolor='rgba(0,0,0,0)',
                               )
 
 with col4: 
+    map_fig.update_layout(shape="point")
     st.plotly_chart(map_fig, use_container_width=True)
 with col5:
     mun_destino = municipios_soro.dropna()['Município destino'].values[0]
