@@ -67,7 +67,7 @@ except:
 #municipios
 col5, col4 = st.columns([2, 4]) 
 with col5:    
-    soro = st.selectbox('Selecione o Soro Antiveneno', dados_geral['soro'].unique())
+    soro = st.selectbox('Soro Antiveneno', dados_geral['soro'].unique(), index=None, placeholder="Selecione o Soro Antiveneno")
     container = st.container(border=True)
     with container: 
         st.write(soro, dicionario_explicacao[soro])
