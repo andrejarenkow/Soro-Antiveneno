@@ -44,6 +44,7 @@ municipios["NM_MUN"] = municipios["NM_MUN"].replace(dicionario)
 #municipios
 col5, col4 = st.columns([2, 4]) 
 with col5:
+    municipios['NM_MUN'] = municipios['NM_MUN'].str.strip()
     lista_mun_distinct = sorted(municipios['NM_MUN'].unique())
     lista_mun_distinct.insert(0, 'Selecione')
     soro = st.selectbox('Selecione o Soro Antiveneno', dados_geral['soro'].unique())
