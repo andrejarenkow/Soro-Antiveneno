@@ -6,6 +6,10 @@ import plotly.graph_objects as go
 import streamlit_js_eval
 import requests
 
+while False:
+    loc = streamlit_js_eval.get_geolocation()
+    location_json = streamlit_js_eval.get_page_location()
+
 # Configurações da página
 st.set_page_config(
     page_title="Soro Antiveneno",
@@ -14,8 +18,6 @@ st.set_page_config(
     initial_sidebar_state='collapsed'
 )
 
-loc = streamlit_js_eval.get_geolocation()
-location_json = streamlit_js_eval.get_page_location()
 lat = str(loc['coords']['latitude'])
 long = str(loc['coords']['longitude'])
 url = f'https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={long}'
