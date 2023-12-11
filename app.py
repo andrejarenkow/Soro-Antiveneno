@@ -13,17 +13,19 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state='collapsed'
 )
-
-loc = dict(streamlit_js_eval.get_geolocation())
-location_json = streamlit_js_eval.get_page_location()
-lat = str(loc['coords']['latitude'])
-long = str(loc['coords']['longitude'])
-url = f'https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={long}'
-localizacao_usuario = requests.get(url)
-loc_usuario = localizacao_usuario.text
-index_inicio = loc_usuario.find('"city":')
-index_fim = loc_usuario.find(',"municipality"')
-municipio_do_usuario = loc_usuario[index_inicio+8:index_fim-1]
+if st.checkbox('Buscar minha localização atual!'):
+    loc = streamlit_js_eval.get_geolocation()
+    location_json = streamlit_js_eval.get_page_location()
+    lat = str(loc['coords']['latitude'])
+    long = str(loc['coords']['longitude'])
+    url = f'https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={long}'
+    localizacao_usuario = requests.get(url)
+    loc_usuario = localizacao_usuario.text
+    index_inicio = loc_usuario.find('"city":')
+    index_fim = loc_usuario.find(',"municipality"')
+    municipio_do_usuario = loc_usuario[index_inicio+8:index_fim-1]
+else:
+    municipio_do_usuario = ''
 
 col1, col2, col3 = st.columns([1,4,1])
 
@@ -43,13 +45,18 @@ municipios['geometry'] = municipios['geometry'].simplify(tolerance = 0.01)
 municipios["NM_MUN"] = municipios["NM_MUN"].replace(dicionario)
 
 lista_mun_distinct = sorted(municipios['NM_MUN'].unique())
-lista_mun_distinct.insert(0, 'Selecione')
+try:
+    if municipio_do_usuario!=''
+        lista_mun_distinct.remove(municipio_do_usuario)
+        lista_mun_distinct.insert(0,municipio_do_usuario)
+except:
+     pass
 #municipios
 col5, col4 = st.columns([2, 4]) 
 with col5:    
     soro = st.selectbox('Selecione o Soro Antiveneno', dados_geral['soro'].unique())
     mun_origem = st.selectbox('Selecione o município de partida', lista_mun_distinct)
-    if mun_origem=='Selecione':
+    if mun_origem==municipio_do_usuario:
         mun_origem = municipio_do_usuario
         
 #Filtro destino
@@ -89,5 +96,3 @@ with col5:
     st.write(f'Município mais próximo: **{mun_destino}**')
     st.write(f'Local: **{local}**')
     st.write(f'Distância: **{distancia} km**')
-    
-
