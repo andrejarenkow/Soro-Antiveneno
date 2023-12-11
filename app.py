@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 import streamlit_js_eval
 import requests
 
-while False:
+while True:
     loc = streamlit_js_eval.get_geolocation()
     location_json = streamlit_js_eval.get_page_location()
 
