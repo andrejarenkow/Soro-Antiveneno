@@ -13,6 +13,12 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state='collapsed'
 )
+col1, col2, col3 = st.columns([1,4,1])
+
+col1.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_cevs%20(1).png?raw=true', width=200)
+col2.title('Soro Antiveneno')
+col3.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_estado%20(3).png?raw=true', width=300)
+
 if st.checkbox('Buscar minha localização atual!'):
     loc = streamlit_js_eval.get_geolocation()
     location_json = streamlit_js_eval.get_page_location()
@@ -26,13 +32,6 @@ if st.checkbox('Buscar minha localização atual!'):
     municipio_do_usuario = loc_usuario[index_inicio+8:index_fim-1]
 else:
     municipio_do_usuario = ''
-
-col1, col2, col3 = st.columns([1,4,1])
-
-col1.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_cevs%20(1).png?raw=true', width=200)
-col2.title('Soro Antiveneno')
-col3.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_estado%20(3).png?raw=true', width=300)
-
 #unificando nomes de municipios
 dicionario = {"Restinga Seca": "Restinga Sêca",
     "Santana do Livramento": "Sant'Ana do Livramento","Santo Antônio Das Missões":"Santo Antônio das Missões", "São Pedro Das Missões":"São Pedro das Missões"}
