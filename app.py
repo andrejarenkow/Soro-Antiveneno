@@ -41,12 +41,11 @@ municipios = gpd.read_file('https://raw.githubusercontent.com/andrejarenkow/geod
 municipios['geometry'] = municipios['geometry'].simplify(tolerance = 0.01)
 municipios["NM_MUN"] = municipios["NM_MUN"].replace(dicionario)
 
+lista_mun_distinct = sorted(municipios['NM_MUN'].unique())
+lista_mun_distinct.insert(0, 'Selecione')
 #municipios
 col5, col4 = st.columns([2, 4]) 
-with col5:
-    municipios['NM_MUN'] = municipios['NM_MUN'].str.strip()
-    lista_mun_distinct = sorted(municipios['NM_MUN'].unique())
-    lista_mun_distinct.insert(0, 'Selecione')
+with col5:    
     soro = st.selectbox('Selecione o Soro Antiveneno', dados_geral['soro'].unique())
     mun_origem = st.selectbox('Selecione o município de partida', lista_mun_distinct)
     if mun_origem=='Selecione':
