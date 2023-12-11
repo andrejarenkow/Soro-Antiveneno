@@ -46,7 +46,7 @@ municipios["NM_MUN"] = municipios["NM_MUN"].replace(dicionario)
 
 lista_mun_distinct = sorted(municipios['NM_MUN'].unique())
 try:
-    if municipio_do_usuario!=''
+    if municipio_do_usuario!='':
         lista_mun_distinct.remove(municipio_do_usuario)
         lista_mun_distinct.insert(0,municipio_do_usuario)
 except:
