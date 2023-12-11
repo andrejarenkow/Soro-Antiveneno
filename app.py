@@ -69,7 +69,8 @@ col5, col4 = st.columns([2, 4])
 with col5:    
     soro = st.selectbox('Selecione o Soro Antiveneno', dados_geral['soro'].unique())
     container = st.container(border=True)
-    container.write(soro, dicionario_explicacao[soro])
+    with container: 
+        st.write(soro, dicionario_explicacao[soro])
 
     mun_origem = st.selectbox('Selecione o município de partida', lista_mun_distinct)
     if mun_origem==municipio_do_usuario:
