@@ -69,12 +69,12 @@ col5, col4 = st.columns([2, 4])
 with col5:  
     animal = st.selectbox("Por qual animal o paciente foi picado?", dados_geral['Animal'].unique(), index=None, placeholder="Selecione o animal")
     soro = st.selectbox('Soro Antiveneno', dados_geral[dados_geral['Animal']==animal]['soro'].unique(), index=None, placeholder="Selecione o Soro Antiveneno")
-    container = st.container(border=True)
-    with container: 
-        try: 
-            st.write(soro, dicionario_explicacao[soro])
-        except: 
-            st.write("")
+    try: 
+        container = st.container(border=True)
+        with container: 
+         st.write(soro, dicionario_explicacao[soro])
+    except: 
+        st.write("")
 
     mun_origem = st.selectbox('Municpipio onde está o paciente', lista_mun_distinct, index=None, placeholder="Selecione o município onde está o paciente")
     if mun_origem==municipio_do_usuario:
