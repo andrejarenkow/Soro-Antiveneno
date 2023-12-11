@@ -19,8 +19,6 @@ col1.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_cev
 col2.title('Soro Antiveneno')
 col3.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_estado%20(3).png?raw=true', width=300)
 
-e = RuntimeError('Aguardando até sua localização estar habilitada para a página.')
-
 if st.checkbox('Buscar minha localização atual!'):
     try:
         loc = streamlit_js_eval.get_geolocation()
@@ -34,7 +32,7 @@ if st.checkbox('Buscar minha localização atual!'):
         index_fim = loc_usuario.find(',"municipality"')
         municipio_do_usuario = loc_usuario[index_inicio+8:index_fim-1]
     except:
-        st.exception(e)
+        st.error('Permita o uso da sua localização atual clicando em PERMITIR!')
 else:
     municipio_do_usuario = ''
 #unificando nomes de municipios
