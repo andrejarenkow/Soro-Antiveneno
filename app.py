@@ -30,7 +30,7 @@ dicionario_explicacao = {
 }
 
 
-if st.checkbox('Buscar minha localização atual!'):
+if st.checkbox('Buscar minha localização atual'):
     try:
         loc = streamlit_js_eval.get_geolocation()
         location_json = streamlit_js_eval.get_page_location()
