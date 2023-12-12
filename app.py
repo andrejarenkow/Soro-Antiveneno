@@ -29,6 +29,8 @@ dicionario_explicacao = {
     "SALon - Soro antilonômico" : ": Esse antídoto é usado para tratamento de envenenamento por lagartas do gênero Lonomia sp. (taturana)."
 }
 
+#dicionario_imagens = {
+    #"SAAr - Soro antiaracnídico" : "st.image('', caption='Phoneutria')"
 
 if st.checkbox('Buscar minha localização atual'):
     try:
@@ -69,6 +71,7 @@ col5, col4 = st.columns([2, 4])
 with col5:  
     animal = st.selectbox("Por qual animal o paciente foi picado?", dados_geral['Animal'].unique(), index=None, placeholder="Selecione o animal")
     soro = st.selectbox('Soro Antiveneno', dados_geral[dados_geral['Animal']==animal]['soro'].unique(), index=None, placeholder="Selecione o Soro Antiveneno")
+        
     try: 
         container = st.container(border=True)
         with container: 
