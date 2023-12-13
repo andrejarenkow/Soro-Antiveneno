@@ -108,7 +108,7 @@ try:
                               hover_name='NM_MUN',
                               hover_data =['Destination', 'Município destino'],
                               color_discrete_sequence = ['red', 'green'],
-                              height = 600, opacity = 0.6,)
+                              height = 700, opacity = 0.6,)
     map_fig.update_layout(template='plotly_dark', paper_bgcolor='rgba(0,0,0,0)', 
                           margin=go.layout.Margin(l=10, r=10, t=10, b=10),
                          )
