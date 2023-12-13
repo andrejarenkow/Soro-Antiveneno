@@ -5,6 +5,7 @@ import streamlit as st
 import plotly.graph_objects as go
 import streamlit_js_eval
 import requests
+import folium
 
 # Configurações da página
 st.set_page_config(
@@ -102,7 +103,8 @@ try:
     
     map_fig = px.choropleth_mapbox(municipios_soro_destino, geojson=municipios_soro_destino.geometry,
                               locations=municipios_soro_destino.index, color='Legenda',
-                              center ={'lat':municipios_soro_destino.geometry.centroid.y.values[0], 'lon':municipios_soro_destino.geometry.centroid.x.values[0]},
+                              center ={'lat':municipios_soro_destino['Latitude'].y.values[0], 'lon':municipios_soro_destino.['Longitude'].x.values[0]}
+                              #center ={'lat':municipios_soro_destino.geometry.centroid.y.values[0], 'lon':municipios_soro_destino.geometry.centroid.x.values[0]},
                               zoom=7.5,
                               mapbox_style="open-street-map",
                               hover_name='NM_MUN',
