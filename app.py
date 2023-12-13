@@ -110,7 +110,7 @@ try:
                               #hover_data =['Destination', 'Município destino'],
                               #color_discrete_sequence = ['red', 'green'],
                               #height = 700, opacity = 0.6,)
-    mapm = folium.Map([45.35, -121.6972], zoom_start=12)
+    mapa = folium.Map([45.35, -121.6972], zoom_start=12)
 
 mapa = folium.Marker(
     location=['Latitude_destino', 'Longitude_destino'],
