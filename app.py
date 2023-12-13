@@ -79,7 +79,7 @@ with col5:
     except: 
         st.write("")
 
-    mun_origem = st.selectbox('Municpipio onde está o paciente', lista_mun_distinct, index=None, placeholder="Selecione o município onde está o paciente")
+    mun_origem = st.selectbox('Município onde está o paciente', lista_mun_distinct, index=None, placeholder="Selecione o município onde está o paciente")
     if mun_origem==municipio_do_usuario:
         mun_origem = municipio_do_usuario
 try:
