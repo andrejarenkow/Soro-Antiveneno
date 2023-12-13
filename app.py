@@ -124,8 +124,10 @@ try:
         with container_respostas: 
             st.write(f'Município onde está o soro mais próximo: **{mun_destino}**')
             st.write(f'Local: **{local}**')
-            st.write(f'Endereço: **{Endereço}**')
+            #st.write(f'Endereço: **{Endereço}**')
+            #st.write(f'Telefone: **{Telefone}**')
             st.write(f'Distância: **{distancia} km**')
+            #st.write ('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.
 
 except: 
     st.write("")
