@@ -110,21 +110,22 @@ try:
                               #hover_data =['Destination', 'Município destino'],
                               #color_discrete_sequence = ['red', 'green'],
                               #height = 700, opacity = 0.6,)
-    mapa = folium.Map([45.35, -121.6972], zoom_start=12)
+    
+mapa = folium.Map([-30, -50], zoom_start=12)
 
-mapa = folium.Marker(
-    location=['Latitude_destino', 'Longitude_destino'],
-    #tooltip="Click me!",
-    #popup="Mt. Hood Meadows",
-    icon=folium.Icon(color="red"),
-).add_to(mapa)
-
-folium.Marker(
-    location=['Latitude_origem', 'Longitude_origem'],
-    #tooltip="Click me!",
-    #popup="Timberline Lodge",
-    icon=folium.Icon(color="green"),
-).add_to(mapa)
+    mapa = folium.Marker(
+        location=['Latitude_destino', 'Longitude_destino'],
+        #tooltip="Click me!",
+        #popup="Mt. Hood Meadows",
+        icon=folium.Icon(color="red"),
+    ).add_to(mapa)
+    
+    folium.Marker(
+        location=['Latitude_origem', 'Longitude_origem'],
+        #tooltip="Click me!",
+        #popup="Timberline Lodge",
+        icon=folium.Icon(color="green"),
+    ).add_to(mapa)
 
     map_fig.update_layout(template='plotly_dark', paper_bgcolor='rgba(0,0,0,0)', 
                           margin=go.layout.Margin(l=10, r=10, t=10, b=10),
