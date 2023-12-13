@@ -5,7 +5,6 @@ import streamlit as st
 import plotly.graph_objects as go
 import streamlit_js_eval
 import requests
-import folium
 
 # Configurações da página
 st.set_page_config(
