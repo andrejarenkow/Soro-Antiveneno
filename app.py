@@ -67,7 +67,7 @@ try:
 except:
      pass
 #municipios
-col5, col4 = st.columns([2, 4]) 
+col5, col4 = st.columns([3, 4]) 
 with col5:  
     animal = st.selectbox("Por qual animal o paciente foi picado?", dados_geral['Animal'].unique(), index=None, placeholder="Selecione o animal")
     soro = st.selectbox('Soro Antiveneno', dados_geral[dados_geral['Animal']==animal]['soro'].unique(), index=None, placeholder="Selecione o Soro Antiveneno")
