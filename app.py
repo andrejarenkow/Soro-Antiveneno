@@ -129,7 +129,7 @@ try:
             st.write(f'Endereço: **{endereco}**')
             st.write(f'Telefone: **{telefone}**')
             st.write(f'Distância: **{distancia} km**')
-            #st.write ('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.
+            st.write ('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.)
 
 except: 
     st.write("")
