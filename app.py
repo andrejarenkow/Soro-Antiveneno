@@ -97,19 +97,35 @@ try:
     municipio_destino = municipios.merge(dados_geral[filtro_destino], left_on='NM_MUN', right_on='Origin', how='left')
     municipio_destino['Legenda'] = 'Destino'
     
-    municipios_soro_destino = pd.concat([municipio_destino, municipios_soro])
-    municipios_soro_destino = municipios_soro_destino.dropna()
+    #municipios_soro_destino = pd.concat([municipio_destino, municipios_soro])
+    #municipios_soro_destino = municipios_soro_destino.dropna()
     
-    map_fig = px.choropleth_mapbox(municipios_soro_destino, geojson=municipios_soro_destino.geometry,
-                              locations=municipios_soro_destino.index, color='Legenda',
+    #map_fig = px.choropleth_mapbox(municipios_soro_destino, geojson=municipios_soro_destino.geometry,
+                              #locations=municipios_soro_destino.index, color='Legenda',
                               #center = {'lat': municipios_soro_destino['Latitude'].values[0], 'lon': municipios_soro_destino['Longitude'].values[0]},
-                              center ={'lat':municipios_soro_destino.geometry.centroid.y.values[0], 'lon':municipios_soro_destino.geometry.centroid.x.values[0]},
-                              zoom=7.5,
-                              mapbox_style="open-street-map",
-                              hover_name='NM_MUN',
-                              hover_data =['Destination', 'Município destino'],
-                              color_discrete_sequence = ['red', 'green'],
-                              height = 700, opacity = 0.6,)
+                              #center ={'lat':municipios_soro_destino.geometry.centroid.y.values[0], 'lon':municipios_soro_destino.geometry.centroid.x.values[0]},
+                              #zoom=7.5,
+                              #mapbox_style="open-street-map",
+                              #hover_name='NM_MUN',
+                              #hover_data =['Destination', 'Município destino'],
+                              #color_discrete_sequence = ['red', 'green'],
+                              #height = 700, opacity = 0.6,)
+    mapm = folium.Map([45.35, -121.6972], zoom_start=12)
+
+mapa = folium.Marker(
+    location=['Latitude_destino', 'Longitude_destino'],
+    #tooltip="Click me!",
+    #popup="Mt. Hood Meadows",
+    icon=folium.Icon(color="red"),
+).add_to(mapa)
+
+folium.Marker(
+    location=['Latitude_origem', 'Longitude_origem'],
+    #tooltip="Click me!",
+    #popup="Timberline Lodge",
+    icon=folium.Icon(color="green"),
+).add_to(mapa)
+
     map_fig.update_layout(template='plotly_dark', paper_bgcolor='rgba(0,0,0,0)', 
                           margin=go.layout.Margin(l=10, r=10, t=10, b=10),
                          )
