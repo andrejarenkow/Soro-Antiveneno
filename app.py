@@ -120,12 +120,14 @@ try:
         mun_destino = municipios_soro.dropna()['Município destino'].values[0]
         distancia = municipios_soro.dropna()['shortest way (km)'].values[0]
         local = municipios_soro.dropna()['Destination'].values[0]
+        endereco = municipios_soro.dropna()['Endereço'].values[0]
+        telefone = municipios_soro.dropna()['Telefone'].values[0]
         container_respostas = st.container(border=True)
         with container_respostas: 
             st.write(f'Município onde está o soro mais próximo: **{mun_destino}**')
             st.write(f'Local: **{local}**')
-            #st.write(f'Endereço: **{Endereço}**')
-            #st.write(f'Telefone: **{Telefone}**')
+            st.write(f'Endereço: **{endereco}**')
+            st.write(f'Telefone: **{telefone}**')
             st.write(f'Distância: **{distancia} km**')
             #st.write ('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.
 
