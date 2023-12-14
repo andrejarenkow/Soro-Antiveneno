@@ -120,6 +120,8 @@ with col5:
         popup=f"O soro está aqui, na cidade de {municipio_destino['Município destino'].values[0]}, {municipio_destino['Destination'].values[0]}",
         icon=folium.Icon(color="red"),
      ).add_to(mapa)
+    
+    folium.TileLayer('MapQuest Open Aerial').add_to(mapa)
 
     with col4: 
         st_data = folium_static(mapa, width=1000, height=600)
