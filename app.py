@@ -92,11 +92,11 @@ with col5:
         
     #Filtro destino
     filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
-    municipios_origem = dados_geral[filtro]
-    municipios_origem['Legenda'] = 'Origem'
+    municipio_origem = dados_geral[filtro]
+    municipio_origem['Legenda'] = 'Origem'
     
-    municipios_origem = municipios_origem.reset_index(drop=True)
-    mun_destino = municipios_origem.dropna()['Município destino'].values[0]
+    municipio_origem = municipio_origem.reset_index(drop=True)
+    mun_destino = municipio_origem.dropna()['Município destino'].values[0]
         
     filtro_destino = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_destino)
     municipio_destino = dados_geral[filtro_destino].dropna()
@@ -119,14 +119,14 @@ with col5:
     mapa = folium.Map([-30, -50], zoom_start=12)
 
     folium.Marker(
-        location= [municipios_origem['Latitude_origem'].values, municipios_origem['Longitude_origem'].values],
+        location= [municipio_origem['Latitude_origem'].values, municipio_origem['Longitude_origem'].values],
         #tooltip="Click me!",
         #popup="Mt. Hood Meadows",
         icon=folium.Icon(color="green"),
     ).add_to(mapa)
     
     folium.Marker(
-        location= [municipios_destino['Latitude_destino'].values, municipios_destino['Longitude_destino'].values],
+        location= [municipio_destino['Latitude_destino'].values, municipio_destino['Longitude_destino'].values],
         #tooltip="Click me!",
         #popup="Mt. Hood Meadows",
         icon=folium.Icon(color="red"),
