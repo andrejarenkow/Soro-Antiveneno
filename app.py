@@ -131,7 +131,7 @@ try:
 
 
     with col4: 
-            st_data = folium_static(m, width=1000, height=600)
+        st_data = folium_static(mapa, width=1000, height=600)
     with col5:
         mun_destino = municipios_soro.dropna()['Município destino'].values[0]
         distancia = municipios_soro.dropna()['shortest way (km)'].values[0]
