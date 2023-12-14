@@ -103,7 +103,7 @@ with col5:
     municipio_destino['Legenda'] = 'Destino'
 
     latitude_media = (municipio_origem['Latitude_origem'].values + municipio_destino['Latitude_destino'].values)/2
-    longitude_media = (municipio_origem['Latitude_destino'].values + municipio_destino['Longitude_destino'].values)/2
+    longitude_media = (municipio_origem['Longitude_origem'].values + municipio_destino['Longitude_destino'].values)/2
    
     mapa = folium.Map([latitude_media,  longitude_media], zoom_start=9)
 
