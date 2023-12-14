@@ -88,54 +88,56 @@ with col5:
     mun_origem = st.selectbox('Município onde está o paciente', lista_mun_distinct, index=None, placeholder="Selecione o município onde está o paciente")
     #if mun_origem==municipio_do_usuario:
        # mun_origem = municipio_do_usuario
-#try:
+    try:
         
-    #Filtro destino
-    filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
-    municipio_origem = dados_geral[filtro]
-    municipio_origem['Legenda'] = 'Origem'
-    
-    #municipio_origem = municipio_origem.reset_index(drop=True)
-    mun_destino = municipio_origem.dropna()['Município destino'].values[0]
+        #Filtro destino
+        filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
+        municipio_origem = dados_geral[filtro]
+        municipio_origem['Legenda'] = 'Origem'
         
-    filtro_destino = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_destino)
-    municipio_destino = dados_geral[filtro_destino].dropna()
-    municipio_destino['Legenda'] = 'Destino'
-
-    latitude_media = (municipio_origem['Latitude_origem'].values + municipio_destino['Latitude_destino'].values)/2
-    longitude_media = (municipio_origem['Longitude_origem'].values + municipio_destino['Longitude_destino'].values)/2
-   
-    mapa = folium.Map([latitude_media,  longitude_media], zoom_start=9)
-
-    folium.Marker(
-        location= [municipio_origem['Latitude_origem'].values, municipio_origem['Longitude_origem'].values],
-        tooltip="Origem",
-        popup="Você está aqui",
-        icon=folium.Icon(color="green"),
-    ).add_to(mapa)
-    
-    folium.Marker(
-        location= [municipio_destino['Latitude_destino'].values, municipio_destino['Longitude_destino'].values],
-        tooltip="Destino",
-        popup=f"O soro está aqui, na cidade de {municipio_destino['Município destino'].values[0]}, {municipio_destino['Destination'].values[0]}",
-        icon=folium.Icon(color="red"),
-     ).add_to(mapa)
-    
-    #folium.TileLayer('MapQuest Open Aerial').add_to(mapa)
-
-    with col4: 
-        st_data = folium_static(mapa, width=1000, height=600)
-    with col5:
+        #municipio_origem = municipio_origem.reset_index(drop=True)
         mun_destino = municipio_origem.dropna()['Município destino'].values[0]
-        distancia = municipio_origem.dropna()['shortest way (km)'].values[0]
-        local = municipio_origem.dropna()['Destination'].values[0]
-        endereco = municipio_origem.dropna()['Endereço'].values[0]
-        telefone = municipio_origem.dropna()['Telefone'].values[0]
-        container_respostas = st.container(border=True)
-        with container_respostas: 
-            st.write(f'Município onde está o soro mais próximo: **{mun_destino}**')
-            st.write(f'Local: **{local}**')
-            st.write(f'Endereço: **{endereco}**')
-            st.write(f'Telefone: **{telefone}**')
-            st.write(f'Distância: **{distancia} km**')
-            st.write('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.')
+            
+        filtro_destino = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_destino)
+        municipio_destino = dados_geral[filtro_destino].dropna()
+        municipio_destino['Legenda'] = 'Destino'
+    
+        latitude_media = (municipio_origem['Latitude_origem'].values + municipio_destino['Latitude_destino'].values)/2
+        longitude_media = (municipio_origem['Longitude_origem'].values + municipio_destino['Longitude_destino'].values)/2
+       
+        mapa = folium.Map([latitude_media,  longitude_media], zoom_start=9)
+    
+        folium.Marker(
+            location= [municipio_origem['Latitude_origem'].values, municipio_origem['Longitude_origem'].values],
+            tooltip="Origem",
+            popup="Você está aqui",
+            icon=folium.Icon(color="green"),
+        ).add_to(mapa)
+        
+        folium.Marker(
+            location= [municipio_destino['Latitude_destino'].values, municipio_destino['Longitude_destino'].values],
+            tooltip="Destino",
+            popup=f"O soro está aqui, na cidade de {municipio_destino['Município destino'].values[0]}, {municipio_destino['Destination'].values[0]}",
+            icon=folium.Icon(color="red"),
+         ).add_to(mapa)
+        
+        #folium.TileLayer('MapQuest Open Aerial').add_to(mapa)
+    
+        with col4: 
+            st_data = folium_static(mapa, width=1000, height=600)
+        with col5:
+            mun_destino = municipio_origem.dropna()['Município destino'].values[0]
+            distancia = municipio_origem.dropna()['shortest way (km)'].values[0]
+            local = municipio_origem.dropna()['Destination'].values[0]
+            endereco = municipio_origem.dropna()['Endereço'].values[0]
+            telefone = municipio_origem.dropna()['Telefone'].values[0]
+            container_respostas = st.container(border=True)
+            with container_respostas: 
+                st.write(f'Município onde está o soro mais próximo: **{mun_destino}**')
+                st.write(f'Local: **{local}**')
+                st.write(f'Endereço: **{endereco}**')
+                st.write(f'Telefone: **{telefone}**')
+                st.write(f'Distância: **{distancia} km**')
+                st.write('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.')
+    except:
+        st.write('')
