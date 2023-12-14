@@ -5,6 +5,8 @@ import streamlit as st
 import plotly.graph_objects as go
 import streamlit_js_eval
 import requests
+import folium
+from streamlit_folium import st_folium, folium_static
 
 # Configurações da página
 st.set_page_config(
@@ -111,29 +113,25 @@ try:
                               #color_discrete_sequence = ['red', 'green'],
                               #height = 700, opacity = 0.6,)
     
-mapa = folium.Map([-30, -50], zoom_start=12)
+    mapa = folium.Map([-30, -50], zoom_start=12)
 
-    mapa = folium.Marker(
-        location=['Latitude_destino', 'Longitude_destino'],
+    folium.Marker(
+        location= [municipios_soro_destino['Latitude_destino'].values[0], municipios_soro_destino ['Longitude_destino']],
         #tooltip="Click me!",
         #popup="Mt. Hood Meadows",
         icon=folium.Icon(color="red"),
     ).add_to(mapa)
     
-    folium.Marker(
-        location=['Latitude_origem', 'Longitude_origem'],
+    #folium.Marker(
+        #location=['Latitude_origem', 'Longitude_origem'],
         #tooltip="Click me!",
         #popup="Timberline Lodge",
-        icon=folium.Icon(color="green"),
-    ).add_to(mapa)
+        #icon=folium.Icon(color="green"),
+    #).add_to(mapa)
 
-    map_fig.update_layout(template='plotly_dark', paper_bgcolor='rgba(0,0,0,0)', 
-                          margin=go.layout.Margin(l=10, r=10, t=10, b=10),
-                         )
-    
-    
+
     with col4: 
-            st.plotly_chart(map_fig, use_container_width=True)
+            st_data = folium_static(m, width=1000, height=600)
     with col5:
         mun_destino = municipios_soro.dropna()['Município destino'].values[0]
         distancia = municipios_soro.dropna()['shortest way (km)'].values[0]
