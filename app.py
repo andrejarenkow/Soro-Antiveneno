@@ -56,6 +56,10 @@ dicionario = {"Restinga Seca": "Restinga Sêca",
 
 
 dados_geral = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTeWn7SmYQbdwulQtkslW2OeNEV-XGEPVcAnlUI1QnnstfjxpUgHgSl3cOrUsX0qlJ6Q9Ef7MvPAUOf/pub?gid=669334724&single=true&output=csv')
+dados_geral['Latitude_origem']=pd.to_numeric(dados_geral['Latitude_origem'].str.replace(',','.'))
+dados_geral['Longitude_origem']=pd.to_numeric(dados_geral['Longitude_origem'].str.replace(',','.'))
+dados_geral['Latitude_destino']=pd.to_numeric(dados_geral['Latitude_destino'].str.replace(',','.'))
+dados_geral['Longitude_destino']=pd.to_numeric(dados_geral['Longitude_destino'].str.replace(',','.'))
 
 municipios = gpd.read_file('https://raw.githubusercontent.com/andrejarenkow/geodata/main/municipios_rs_CRS/RS_Municipios_2021.json')
 municipios['geometry'] = municipios['geometry'].simplify(tolerance = 0.01)
