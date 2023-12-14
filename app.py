@@ -92,11 +92,11 @@ with col5:
         
     #Filtro destino
     filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
-    municipios_soro = dados_geral[filtro]
-    municipios_soro['Legenda'] = 'Origem'
+    municipios_origem = dados_geral[filtro]
+    municipios_origem['Legenda'] = 'Origem'
     
-    municipios_soro = municipios_soro.reset_index(drop=True)
-    mun_destino = municipios_soro.dropna().reset_index(drop=True)['Município destino'].values[0]
+    municipios_origem = municipios_origem.reset_index(drop=True)
+    mun_destino = municipios_origem.dropna().reset_index(drop=True)['Município destino'].values[0]
         
     filtro_destino = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_destino)
     municipio_destino = dados_geral[filtro_destino].dropna()
@@ -119,19 +119,18 @@ with col5:
     mapa = folium.Map([-30, -50], zoom_start=12)
 
     folium.Marker(
-        location= [municipios_soro['Latitude_destino'].values, municipios_soro['Longitude_destino'].values],
+        location= [municipios_origem['Latitude_origem'].values, municipios_origem['Longitude_origem'].values],
+        #tooltip="Click me!",
+        #popup="Mt. Hood Meadows",
+        icon=folium.Icon(color="green"),
+    ).add_to(mapa)
+    
+    folium.Marker(
+        location= [municipios_destino['Latitude_destino'].values, municipios_destino['Longitude_destino'].values],
         #tooltip="Click me!",
         #popup="Mt. Hood Meadows",
         icon=folium.Icon(color="red"),
-    ).add_to(mapa)
-    
-    #folium.Marker(
-        #location=['Latitude_origem', 'Longitude_origem'],
-        #tooltip="Click me!",
-        #popup="Timberline Lodge",
-        #icon=folium.Icon(color="green"),
-    #).add_to(mapa)
-
+     ).add_to(mapa)
 
     with col4: 
         st_data = folium_static(mapa, width=1000, height=600)
@@ -149,4 +148,3 @@ with col5:
             st.write(f'Telefone: **{telefone}**')
             st.write(f'Distância: **{distancia} km**')
             st.write('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.')
-            municipios_soro_destino
