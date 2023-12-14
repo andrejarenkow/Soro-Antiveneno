@@ -92,8 +92,8 @@ with col5:
     municipios_soro['Legenda'] = 'Origem'
     
     municipios_soro = municipios_soro.dropna()
-    
-    mun_destino = municipios_soro.dropna().reset_index(drop=True)['Município destino'].values[0]
+    municipios_soro
+    #mun_destino = municipios_soro.dropna().reset_index(drop=True)['Município destino'].values[0]
         
     filtro_destino = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_destino)
     municipio_destino = dados_geral[filtro_destino].dropna()
