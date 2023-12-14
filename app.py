@@ -122,8 +122,6 @@ with col5:
      ).add_to(mapa)
 
     with col4: 
-        latitude_media
-        longitude_media
         st_data = folium_static(mapa, width=1000, height=600)
     with col5:
         mun_destino = municipio_origem.dropna()['Município destino'].values[0]
