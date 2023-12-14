@@ -95,26 +95,12 @@ with col5:
     municipio_origem = dados_geral[filtro]
     municipio_origem['Legenda'] = 'Origem'
     
-    municipio_origem = municipio_origem.reset_index(drop=True)
+    #municipio_origem = municipio_origem.reset_index(drop=True)
     mun_destino = municipio_origem.dropna()['Município destino'].values[0]
         
     filtro_destino = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_destino)
     municipio_destino = dados_geral[filtro_destino].dropna()
     municipio_destino['Legenda'] = 'Destino'
-    
-    #municipios_soro_destino = pd.concat([municipio_destino, municipios_soro])
-    #municipios_soro_destino = municipios_soro_destino.dropna()
-    
-    #map_fig = px.choropleth_mapbox(municipios_soro_destino, geojson=municipios_soro_destino.geometry,
-                              #locations=municipios_soro_destino.index, color='Legenda',
-                              #center = {'lat': municipios_soro_destino['Latitude'].values[0], 'lon': municipios_soro_destino['Longitude'].values[0]},
-                              #center ={'lat':municipios_soro_destino.geometry.centroid.y.values[0], 'lon':municipios_soro_destino.geometry.centroid.x.values[0]},
-                              #zoom=7.5,
-                              #mapbox_style="open-street-map",
-                              #hover_name='NM_MUN',
-                              #hover_data =['Destination', 'Município destino'],
-                              #color_discrete_sequence = ['red', 'green'],
-                              #height = 700, opacity = 0.6,)
     
     mapa = folium.Map([-30, -50], zoom_start=12)
 
@@ -133,7 +119,9 @@ with col5:
      ).add_to(mapa)
 
     with col4: 
+        municipio_origem
         st_data = folium_static(mapa, width=1000, height=600)
+        municipio_destino
     with col5:
         mun_destino = municipio_origem.dropna()['Município destino'].values[0]
         distancia = municipio_origem.dropna()['shortest way (km)'].values[0]
