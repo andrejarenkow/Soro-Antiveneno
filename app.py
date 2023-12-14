@@ -105,7 +105,7 @@ with col5:
     latitude_media = (municipio_origem['Latitude_origem'].values + municipio_destino['Latitude_destino'].values)/2
     longitude_media = (municipio_origem['Latitude_destino'].values + municipio_destino['Longitude_destino'].values)/2
    
-    mapa = folium.Map([latitude_media ,  longitude_media ], zoom_start=9)
+    mapa = folium.Map([latitude_media,  longitude_media], zoom_start=9)
 
     folium.Marker(
         location= [municipio_origem['Latitude_origem'].values, municipio_origem['Longitude_origem'].values],
@@ -122,9 +122,9 @@ with col5:
      ).add_to(mapa)
 
     with col4: 
-        municipio_origem
+        latitude_media
+        longitude_media
         st_data = folium_static(mapa, width=1000, height=600)
-        municipio_destino
     with col5:
         mun_destino = municipio_origem.dropna()['Município destino'].values[0]
         distancia = municipio_origem.dropna()['shortest way (km)'].values[0]
