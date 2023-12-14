@@ -135,11 +135,11 @@ with col5:
     with col4: 
         st_data = folium_static(mapa, width=1000, height=600)
     with col5:
-        mun_destino = municipios_soro.dropna()['Município destino'].values[0]
-        distancia = municipios_soro.dropna()['shortest way (km)'].values[0]
-        local = municipios_soro.dropna()['Destination'].values[0]
-        endereco = municipios_soro.dropna()['Endereço'].values[0]
-        telefone = municipios_soro.dropna()['Telefone'].values[0]
+        mun_destino = municipio_origem.dropna()['Município destino'].values[0]
+        distancia = municipio_origem.dropna()['shortest way (km)'].values[0]
+        local = municipio_origem.dropna()['Destination'].values[0]
+        endereco = municipio_origem.dropna()['Endereço'].values[0]
+        telefone = municipio_origem.dropna()['Telefone'].values[0]
         container_respostas = st.container(border=True)
         with container_respostas: 
             st.write(f'Município onde está o soro mais próximo: **{mun_destino}**')
