@@ -101,8 +101,11 @@ with col5:
     filtro_destino = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_destino)
     municipio_destino = dados_geral[filtro_destino].dropna()
     municipio_destino['Legenda'] = 'Destino'
-    
-    mapa = folium.Map([-30, -50], zoom_start=12)
+
+    latitude_media = (municipio_origem['Latitude_origem'].values + municipio_destino['Latitude_destino'].values)/2
+    longitude_media = (municipio_origem['Latitude_destino'].values + municipio_destino['Longitude_destino'].values)/2
+   
+    mapa = folium.Map([latitude_media ,  longitude_media ], zoom_start=9)
 
     folium.Marker(
         location= [municipio_origem['Latitude_origem'].values, municipio_origem['Longitude_origem'].values],
