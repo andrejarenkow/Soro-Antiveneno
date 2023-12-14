@@ -148,5 +148,4 @@ try:
             st.write('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.')
             municipios_soro_destino
 
-    #except: 
-        #st.write("")
+   
