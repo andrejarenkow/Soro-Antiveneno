@@ -82,13 +82,13 @@ with col5:
         st.write("")
 
     mun_origem = st.selectbox('Município onde está o paciente', lista_mun_distinct, index=None, placeholder="Selecione o município onde está o paciente")
-    if mun_origem==municipio_do_usuario:
-        mun_origem = municipio_do_usuario
-try:
+    #if mun_origem==municipio_do_usuario:
+       # mun_origem = municipio_do_usuario
+#try:
         
     #Filtro destino
     filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
-    municipios_soro = municipios.merge(dados_geral[filtro], left_on='NM_MUN', right_on='Origin', how='left')
+    municipios_soro = dados_geral[filtro]
     municipios_soro['Legenda'] = 'Origem'
     
     municipios_soro = municipios_soro.dropna()
@@ -96,7 +96,7 @@ try:
     mun_destino = municipios_soro.dropna()['Município destino'].values[0]
         
     filtro_destino = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_destino)
-    municipio_destino = municipios.merge(dados_geral[filtro_destino], left_on='NM_MUN', right_on='Origin', how='left')
+    municipio_destino = dados_geral[filtro_destino].dropna()
     municipio_destino['Legenda'] = 'Destino'
     
     #municipios_soro_destino = pd.concat([municipio_destino, municipios_soro])
@@ -116,7 +116,7 @@ try:
     mapa = folium.Map([-30, -50], zoom_start=12)
 
     folium.Marker(
-        location= [municipios_soro_destino['Latitude_destino'].values[0], municipios_soro_destino ['Longitude_destino']],
+        location= [municipios_soro['Latitude_destino'].values[0], municipios_soro['Longitude_destino']],
         #tooltip="Click me!",
         #popup="Mt. Hood Meadows",
         icon=folium.Icon(color="red"),
