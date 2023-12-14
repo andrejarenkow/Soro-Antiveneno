@@ -84,7 +84,7 @@ with col5:
     mun_origem = st.selectbox('Município onde está o paciente', lista_mun_distinct, index=None, placeholder="Selecione o município onde está o paciente")
     #if mun_origem==municipio_do_usuario:
        # mun_origem = municipio_do_usuario
-try:
+#try:
         
     #Filtro destino
     filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
@@ -147,5 +147,3 @@ try:
             st.write(f'Distância: **{distancia} km**')
             st.write('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.')
             municipios_soro_destino
-
-   
