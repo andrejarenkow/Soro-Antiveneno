@@ -84,7 +84,7 @@ with col5:
     mun_origem = st.selectbox('Município onde está o paciente', lista_mun_distinct, index=None, placeholder="Selecione o município onde está o paciente")
     #if mun_origem==municipio_do_usuario:
        # mun_origem = municipio_do_usuario
-#try:
+try:
         
     #Filtro destino
     filtro = (dados_geral['soro'] == soro)&(dados_geral['Origin'] == mun_origem)
@@ -116,7 +116,7 @@ with col5:
     mapa = folium.Map([-30, -50], zoom_start=12)
 
     folium.Marker(
-        location= [municipios_soro['Latitude_destino'].values[0], municipios_soro['Longitude_destino']],
+        location= [municipios_soro['Latitude_destino'].values, municipios_soro['Longitude_destino'].values],
         #tooltip="Click me!",
         #popup="Mt. Hood Meadows",
         icon=folium.Icon(color="red"),
