@@ -109,15 +109,15 @@ with col5:
 
     folium.Marker(
         location= [municipio_origem['Latitude_origem'].values, municipio_origem['Longitude_origem'].values],
-        #tooltip="Click me!",
-        #popup="Mt. Hood Meadows",
+        tooltip="Origem",
+        popup="Você está aqui",
         icon=folium.Icon(color="green"),
     ).add_to(mapa)
     
     folium.Marker(
         location= [municipio_destino['Latitude_destino'].values, municipio_destino['Longitude_destino'].values],
-        #tooltip="Click me!",
-        #popup="Mt. Hood Meadows",
+        tooltip="Destino",
+        popup="O soro está aqui",
         icon=folium.Icon(color="red"),
      ).add_to(mapa)
 
