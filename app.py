@@ -121,7 +121,7 @@ with col5:
         icon=folium.Icon(color="red"),
      ).add_to(mapa)
     
-    folium.TileLayer('MapQuest Open Aerial').add_to(mapa)
+    #folium.TileLayer('MapQuest Open Aerial').add_to(mapa)
 
     with col4: 
         st_data = folium_static(mapa, width=1000, height=600)
