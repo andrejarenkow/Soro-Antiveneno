@@ -117,7 +117,7 @@ with col5:
     folium.Marker(
         location= [municipio_destino['Latitude_destino'].values, municipio_destino['Longitude_destino'].values],
         tooltip="Destino",
-        popup="O soro está aqui",
+        popup=f"O soro está aqui, na cidade de {municipio_destino['Município destino'].values}, {municipio_destino['Destination'].values}",
         icon=folium.Icon(color="red"),
      ).add_to(mapa)
 
