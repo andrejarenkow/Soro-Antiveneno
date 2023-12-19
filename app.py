@@ -148,4 +148,4 @@ with col5:
                              lat="Latitude_destino", 
                              lon="Longitude_destino", 
                              hover_name="Destination")
-        fig.show()
+        st.plotly_chart(fig)
