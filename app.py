@@ -155,11 +155,11 @@ with col5:
       
             mapa_vazio = folium.Map([-29.492046590850748, -53.10367543293593], zoom_start=5.5)
             
-            for latitude, longitude in zip(pontos['Latitude_destino'], pontos['Longitude_destino']):
+            for latitude, longitude, hospital, endereco  in zip(pontos['Latitude_destino'], pontos['Longitude_destino'], pontos['Destination'], pontos['Endereço']):
                 folium.Marker(
                     location= [latitude, longitude],
-                    #tooltip="Origem",
-                    #popup="Você está aqui",
+                    tooltip=hospital,
+                    popup=endereco,
                     icon=folium.Icon(color="red"),
                 ).add_to(mapa_vazio)
             st_data = folium_static(mapa_vazio, width=1000, height=600)
