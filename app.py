@@ -141,3 +141,8 @@ with col5:
                 st.write('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.')
     except:
         st.write('')
+        fig = px.scatter_geo(dados_geral.drop_duplicates(['Destination']),
+                    lat=geo_df.Latitude_destino.y,
+                    lon=geo_df.Longitude_destino.x,
+                    hover_name="Hospital")
+fig.show()
