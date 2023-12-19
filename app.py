@@ -141,7 +141,9 @@ with col5:
                 st.write('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.')
     except:
         with col4:
-            pontos = dados_geral.drop_duplicates(['Destination'])
+            filtro = (dados_geral['soro'] == soro)&(dados_geral['Animal'] == animal)
+            
+            pontos = dados_geral[filtro].drop_duplicates(['Destination'])
             #pontos['Latitude_destino'] = pontos['Latitude_destino'].astype('float')
             #pontos['Longitude_destino'] = pontos['Longitude_destino'].astype('float')
             #fig = px.scatter_mapbox(pontos,
