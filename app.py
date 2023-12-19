@@ -144,8 +144,8 @@ with col5:
         pontos = dados_geral.drop_duplicates(['Destination'])
         pontos['Latitude_destino'] = pontos['Latitude_destino'].astype('float')
         pontos['Longitude_destino'] = pontos['Longitude_destino'].astype('float')
-        fig = px.scatter_geopx.scatter_geo((pontos),
-                                           lat="Latitude_destino", 
-                                           lon="Longitude_destino", 
-                                           hover_name="Hospital")
+        fig = px.scatter_geo((pontos),
+                              lat="Latitude_destino", 
+                              lon="Longitude_destino", 
+                              hover_name="Hospital")
         fig.show()
