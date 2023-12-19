@@ -141,15 +141,27 @@ with col5:
                 st.write('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.')
     except:
         with col4:
-            st.write('')
             pontos = dados_geral.drop_duplicates(['Destination'])
-            pontos['Latitude_destino'] = pontos['Latitude_destino'].astype('float')
-            pontos['Longitude_destino'] = pontos['Longitude_destino'].astype('float')
-            fig = px.scatter_mapbox(pontos,
-                                    lat="Latitude_destino", 
-                                    lon="Longitude_destino", 
-                                    hover_name="Destination",
-                                    zoom=5)
-            fig.update_layout(margin=go.layout.Margin(l=10, r=10, t=10, b=10),paper_bgcolor='rgba(0,0,0,0)',
-                              mapbox_accesstoken= 'pk.eyJ1IjoiYW5kcmUtamFyZW5rb3ciLCJhIjoiY2xkdzZ2eDdxMDRmMzN1bnV6MnlpNnNweSJ9.4_9fi6bcTxgy5mGaTmE4Pw')
-            st.plotly_chart(fig)
+            #pontos['Latitude_destino'] = pontos['Latitude_destino'].astype('float')
+            #pontos['Longitude_destino'] = pontos['Longitude_destino'].astype('float')
+            #fig = px.scatter_mapbox(pontos,
+            #                        lat="Latitude_destino", 
+            #                        lon="Longitude_destino", 
+            #                        hover_name="Destination",
+            #                        zoom=5)
+            #fig.update_layout(margin=go.layout.Margin(l=10, r=10, t=10, b=10),paper_bgcolor='rgba(0,0,0,0)',
+            #                  mapbox_accesstoken= 'pk.eyJ1IjoiYW5kcmUtamFyZW5rb3ciLCJhIjoiY2xkdzZ2eDdxMDRmMzN1bnV6MnlpNnNweSJ9.4_9fi6bcTxgy5mGaTmE4Pw')
+            #st.plotly_chart(fig)
+      
+            mapa_vazio = folium.Map([-29.492046590850748, -53.10367543293593], zoom_start=5.5)
+            
+            for latitude, longitude in zip(pontos['Latitude_destino'], pontos['Longitude_destino']):
+                folium.Marker(
+                    location= [latitude, longitude],
+                    #tooltip="Origem",
+                    #popup="Você está aqui",
+                    icon=folium.Icon(color="red"),
+                ).add_to(mapa_vazio)
+            st_data = folium_static(mapa_vazio, width=1000, height=600)
+
+
