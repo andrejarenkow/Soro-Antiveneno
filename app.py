@@ -145,7 +145,7 @@ with col5:
                 filtro = (dados_geral['Animal'] == animal)
                 dados_mapa_vazio = dados_geral[filtro]
             
-            if soro:
+            elif soro:
                 filtro = (dados_geral['soro'] == soro)&(dados_geral['Animal'] == animal)
                 dados_mapa_vazio = dados_geral[filtro]
             
