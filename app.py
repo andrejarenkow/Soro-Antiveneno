@@ -147,7 +147,7 @@ with col5:
             
             if soro:
                 filtro = (dados_geral['soro'] == soro)&(dados_geral['Animal'] == animal)
-                 dados_mapa_vazio = dados_geral[filtro]
+                dados_mapa_vazio = dados_geral[filtro]
             
             else:
                 dados_mapa_vazio = dados_geral.copy()
