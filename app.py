@@ -142,7 +142,7 @@ with col5:
     except:
         st.write('')
         fig = px.scatter_geo(dados_geral.drop_duplicates(['Destination']),
-                    lat=geo_df.Latitude_destino.y,
-                    lon=geo_df.Longitude_destino.x,
+                    lat=dados_geral.drop_duplicates.Latitude_destino.y,
+                    lon=dados_geral.drop_duplicates.Longitude_destino.x,
                     hover_name="Hospital")
 fig.show()
