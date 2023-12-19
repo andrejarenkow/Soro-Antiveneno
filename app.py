@@ -147,5 +147,5 @@ with col5:
         fig = px.scatter_geo(pontos,
                              lat="Latitude_destino", 
                              lon="Longitude_destino", 
-                             hover_name="Hospital")
+                             hover_name="Destination")
         fig.show()
