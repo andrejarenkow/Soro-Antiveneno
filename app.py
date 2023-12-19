@@ -142,10 +142,7 @@ with col5:
     except:
         st.write('')
         pontos = dados_geral.drop_duplicates(['Destination'])
-        dados_geral.Latitude_destino = dados_geral.Latitude_destino.astype('float')
-        dados_geral.Longitude_destino = dados_geral.Longitude_destino.astype('float')
-        fig = px.scatter_geo(pontos),
-                             lat=pontos.Latitude_destino.y,
-                             lon=pontos.Longitude_destino.x,
-                             hover_name="Hospital")
-fig.show()
+        pontos['Latitude_destino'] = pontos['Latitude_destino'].astype('float')
+        pontos['Longitude_destino'] = pontos['Longitude_destino'].astype('float')
+        fig = px.scatter_geopx.scatter_geo(pontos, lat="Latitude_destino", lon="Longitude_destino", hover_name="Hospital")
+        fig.show()
