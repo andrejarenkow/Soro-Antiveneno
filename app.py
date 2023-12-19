@@ -141,14 +141,14 @@ with col5:
                 st.write('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.')
     except:
         with col4:
-            if animal:
-                filtro = (dados_geral['Animal'] == animal)
-                dados_mapa_vazio = dados_geral[filtro]
-            
-            elif soro:
+            if soro:
                 filtro = (dados_geral['soro'] == soro)&(dados_geral['Animal'] == animal)
                 dados_mapa_vazio = dados_geral[filtro]
             
+            elif animal:
+                filtro = (dados_geral['Animal'] == animal)
+                dados_mapa_vazio = dados_geral[filtro] 
+  
             else:
                 dados_mapa_vazio = dados_geral.copy()
             
