@@ -140,15 +140,16 @@ with col5:
                 st.write(f'Distância: **{distancia} km**')
                 st.write('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.')
     except:
+        with col4:
         st.write('')
-        pontos = dados_geral.drop_duplicates(['Destination'])
-        pontos['Latitude_destino'] = pontos['Latitude_destino'].astype('float')
-        pontos['Longitude_destino'] = pontos['Longitude_destino'].astype('float')
-        fig = px.scatter_mapbox(pontos,
-                                lat="Latitude_destino", 
-                                lon="Longitude_destino", 
-                                hover_name="Destination",
-                                zoom=5)
-        fig.update_layout(margin=go.layout.Margin(l=10, r=10, t=10, b=10),paper_bgcolor='rgba(0,0,0,0)',
-                          mapbox_accesstoken= 'pk.eyJ1IjoiYW5kcmUtamFyZW5rb3ciLCJhIjoiY2xkdzZ2eDdxMDRmMzN1bnV6MnlpNnNweSJ9.4_9fi6bcTxgy5mGaTmE4Pw')
-        st.plotly_chart(fig)
+            pontos = dados_geral.drop_duplicates(['Destination'])
+            pontos['Latitude_destino'] = pontos['Latitude_destino'].astype('float')
+            pontos['Longitude_destino'] = pontos['Longitude_destino'].astype('float')
+            fig = px.scatter_mapbox(pontos,
+                                    lat="Latitude_destino", 
+                                    lon="Longitude_destino", 
+                                    hover_name="Destination",
+                                    zoom=5)
+            fig.update_layout(margin=go.layout.Margin(l=10, r=10, t=10, b=10),paper_bgcolor='rgba(0,0,0,0)',
+                              mapbox_accesstoken= 'pk.eyJ1IjoiYW5kcmUtamFyZW5rb3ciLCJhIjoiY2xkdzZ2eDdxMDRmMzN1bnV6MnlpNnNweSJ9.4_9fi6bcTxgy5mGaTmE4Pw')
+            st.plotly_chart(fig)
