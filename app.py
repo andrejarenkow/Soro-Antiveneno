@@ -148,7 +148,6 @@ with col5:
                                 lat="Latitude_destino", 
                                 lon="Longitude_destino", 
                                 hover_name="Destination")
-        fig.update_layout( margin=go.layout.Margin(l=10, r=10, t=10, b=10),paper_bgcolor='rgba(0,0,0,0)',
-                           mapbox_accesstoken= 'pk.eyJ1IjoiYW5kcmUtamFyZW5rb3ciLCJhIjoiY2xkdzZ2eDdxMDRmMzN1bnV6MnlpNnNweSJ9.4_9fi6bcTxgy5mGaTmE4Pw',
-                              )
-      st.plotly_chart(fig)
+        fig.update_layout(margin=go.layout.Margin(l=10, r=10, t=10, b=10),paper_bgcolor='rgba(0,0,0,0)',
+                          mapbox_accesstoken= 'pk.eyJ1IjoiYW5kcmUtamFyZW5rb3ciLCJhIjoiY2xkdzZ2eDdxMDRmMzN1bnV6MnlpNnNweSJ9.4_9fi6bcTxgy5mGaTmE4Pw')
+        st.plotly_chart(fig)
