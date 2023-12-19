@@ -145,7 +145,7 @@ with col5:
         dados_geral.Latitude_destino = dados_geral.Latitude_destino.astype('float')
         dados_geral.Longitude_destino = dados_geral.Longitude_destino.astype('float')
         fig = px.scatter_geo(pontos),
-                    lat=pontos.Latitude_destino.y,
-                    lon=pontos.Longitude_destino.x,
-                    hover_name="Hospital")
+                             lat=pontos.Latitude_destino.y,
+                             lon=pontos.Longitude_destino.x,
+                             hover_name="Hospital")
 fig.show()
