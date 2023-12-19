@@ -141,6 +141,8 @@ with col5:
                 st.write('**ATENÇÃO**: ligue para o local para fazer a confirmação da disponibilidade do soro.')
     except:
         st.write('')
+        dados_geral.Latitude_destino.y = dados_geral.Latitude_destino.y.astype('float')
+        dados_geral.Longitude_destino.x = dados_geral.Longitude_destino.x.astype('float')
         fig = px.scatter_geo(dados_geral.drop_duplicates(['Destination']),
                     lat=dados_geral.drop_duplicates.Latitude_destino.y,
                     lon=dados_geral.drop_duplicates.Longitude_destino.x,
