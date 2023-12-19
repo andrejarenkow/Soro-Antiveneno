@@ -164,7 +164,7 @@ with col5:
             #                  mapbox_accesstoken= 'pk.eyJ1IjoiYW5kcmUtamFyZW5rb3ciLCJhIjoiY2xkdzZ2eDdxMDRmMzN1bnV6MnlpNnNweSJ9.4_9fi6bcTxgy5mGaTmE4Pw')
             #st.plotly_chart(fig)
       
-            mapa_vazio = folium.Map([-29.492046590850748, -53.10367543293593], zoom_start=6)
+            mapa_vazio = folium.Map([-29.492046590850748, -53.10367543293593], zoom_start=7)
             
             for latitude, longitude, hospital, endereco  in zip(pontos['Latitude_destino'], pontos['Longitude_destino'], pontos['Destination'], pontos['Endereço']):
                 folium.Marker(
@@ -173,6 +173,7 @@ with col5:
                     popup=endereco,
                     icon=folium.Icon(color="red"),
                 ).add_to(mapa_vazio)
+            st.subheader('Mapa com todos os pontos')
             st_data = folium_static(mapa_vazio, width=1000, height=600)
 
 
