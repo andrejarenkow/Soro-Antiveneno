@@ -144,16 +144,9 @@ with col5:
         pontos = dados_geral.drop_duplicates(['Destination'])
         pontos['Latitude_destino'] = pontos['Latitude_destino'].astype('float')
         pontos['Longitude_destino'] = pontos['Longitude_destino'].astype('float')
-        fig = px.scatter_geo(pontos,
-                             lat="Latitude_destino", 
-                             lon="Longitude_destino", 
-                             hover_name="Destination")
+        fig = px.scatter_mapbox(pontos,
+                                lat="Latitude_destino", 
+                                lon="Longitude_destino", 
+                                hover_name="Destination")
         st.plotly_chart(fig)
-        fig.update_geos(
-            projection_type="open street map",
-            center=dict(lat=-29, lon=-53),  # Ponto central do mapa (latitude, longitude)
-            scope="brazil",  # Escopo geográfico ("world", "usa", "europe", "asia", etc.)
-            showland=True,
-            landcolor="rgba(255, 255, 255, 0)",  # Cor da terra (transparente)
-)
-        fig.show()
+      
