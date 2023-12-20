@@ -179,7 +179,7 @@ with col5:
 
 
 texto = """
-ACIDENTES OFÍDICOS
+## ACIDENTES OFÍDICOS
 
 Os acidentes botrópicos são aqueles causados pelas serpentes do gênero Bothrops sp., sendo as mais comuns a jararaca (Bothrops jararaca), a cruzeira (Bothrops alternatus) e a jararaca-pintada (Bothrops pubescens). Eventualmente, ocorrem acidentes com outras duas espécies mais raras, a Bothrops diporus e a Bothrops cotiara. Os acidentes crotálicos são aqueles causados pela cascavel (Crotalus durissus). No Rio Grande do Sul, os acientes elapídicos são causados, principalmente, pela Micrurus altirostris, uma das várias espécies de corais-verdadeiras encontradas no Brasil, e que está distribuída por todo o estado.
 
@@ -197,7 +197,7 @@ Crotalus durissus: Cascavel. Marrom amarelada com desenhos de losangos mais clar
 
 Micrurus altirostris: Coral-verdadeira. A espécie tem como característica a presença de anéis pretos e brancos sobre fundo vermelho. Os anéis circundam todo o corpo. Mede até 80 cm. A atividade ocorre principalmente durante o dia, reduzindo até o período da noite. As corais-verdadeiras têm hábitos fossoriais, vivendo em tocas ou buracos embaixo da terra nas matas ou bordas de matas. Não possuem presas especializadas como as Viperidaes, mas pequenos dentes. Precisam morder e segurar a presa para inocular o veneno. Alimentam-se de outras serpentes. Veneno de ação neurotóxica.
 
-ACIDENTES POR ARANHAS
+## ACIDENTES POR ARANHAS
 
 Os envenenamentos por aranhas predominam no Rio Grande do Sul com relação aos demais acidentes por animais peçonhentos. Existem duas espécies de aranha de importância médica no estado, cujos envenenamentos podem ser tratados com soro antiveneno: Loxosceles intermedia, a aranha-marrom, e Phoneutria nigriventris, a aranha-armadeira. 
 
@@ -205,13 +205,13 @@ Loxosceles intermedia: a aranha-marrom é característica de centros urbanos e p
 
 Phoneutria nigriventris: a armadeira é um aracnídeo de maior tamanho e apresenta comportamento reativo – ao se sentir ameaçada, pode saltar sobre a pessoa ou animal, causando o acidente. A armadeira é mais comum em áreas rurais e pode entrar em galpões, porões, e até nas residências durante o período reprodutivo, entre os meses de março e maio, quando os machos se tornam errantes em busca de fêmeas. O acidente causa dor intensa.
 
-ACIDENTES POR ESCORPIÃO
+## ACIDENTES POR ESCORPIÃO
 
 No Rio Grande do Sul há diversas espécies de escorpiões, sendo que a maioria é de baixa toxicidade. Já o Tityus serrulatus, conhecido popularmente como escorpião-amarelo, é o responsável pelos acidentes de alta toxicidade e que, em alguns casos, necessidade de tratamento com soro antiescorpiônico ou antiaracnídico.
 
 Tityus serrulatus: o escorpião-amarelo é exótico no estado, sendo natural de Minas Gerais, e é provável que ele tenha se distribuído por todo o Brasil a partir do transporte humano rodoviário, em meio a produtos como verduras e legumes. Ao chegar em locais novos, se houver alimento (principalmente baratas), água e abrigo o T. serrulatus logo se adapta e se multiplica, tornando-se endêmico. Os principais grupos de risco para acidentes causados por escorpião-amarelo são as crianças e os idosos. Chega, no máximo, a 7 cm de tamanho. Possui o corpo amarelo com detalhes mais escuros no dorso, ponta das pinças e ponta da causa. Ainda, é possível identificá-lo pelas serrilhas presentes na cauda. O veneno do escorpião-amarelo pode causar alterações na frequência cardíaca, respiratória e na pressão arterial.
 
-ACIDENTES POR LAGARTA
+## ACIDENTES POR LAGARTA
 
 Existem diversas lagartas urticantes no Rio Grande do Sul, mas a Lonomia obliqua, conhecida como taturana, é a única que pode causar acidentes graves com a necessidade do uso de soro antilonômico. 
 
