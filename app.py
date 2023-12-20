@@ -178,3 +178,45 @@ with col5:
             st_data = folium_static(mapa_vazio, width=1000, height=600)
 
 
+texto = """
+ACIDENTES OFÍDICOS
+
+Os acidentes botrópicos são aqueles causados pelas serpentes do gênero Bothrops sp., sendo as mais comuns a jararaca (Bothrops jararaca), a cruzeira (Bothrops alternatus) e a jararaca-pintada (Bothrops pubescens). Eventualmente, ocorrem acidentes com outras duas espécies mais raras, a Bothrops diporus e a Bothrops cotiara. Os acidentes crotálicos são aqueles causados pela cascavel (Crotalus durissus). No Rio Grande do Sul, os acientes elapídicos são causados, principalmente, pela Micrurus altirostris, uma das várias espécies de corais-verdadeiras encontradas no Brasil, e que está distribuída por todo o estado.
+
+Bothrops cotiara: Cotiara, jararaca-da-barriga-preta, jararaca-preta. Apresenta coloração castanha esverdeada com desenhos de trapézios. O ventre é preto. Comprimento de, em média, 80 cm. Atividade noturna. Serpente terrícola de baixa densidade populacional, distribui-se ao norte do estado, nas áreas de mata de araucária - ecossistema que já foi amplamente reduzido. Desta forma, a cotiara encontra-se em ameaça de extinção do Rio Grande do Sul. Alimenta-se exclusivamente de pequenos roedores e marsupiais. Veneno de ação proteolítica, coagulante e hemorrágica.
+
+Bothrops diporus: Jararaca-pintada, jararaca-pintada-argentina. Castanha com desenhos em forma de trapézios. Ventre manchado, semelhante à B. pubescens. Pode medir até 1 m. Atividade crepuscular e noturna. Comum em matas e plantações. Bastante adaptada a ambientes modificados pelo homem. Veneno de ação proteolítica, coagulante e hemorrágica.
+
+ Bothrops jararaca: Jararaca, jararaca-comum. Marrom-esverdeada, com desenhos escuros em forma de V invertido. Mede em média 1 m. Atividade crepuscular e noturna. Comum em matas e florestas, principalmente nos remanescentes de Mata Atlântica. Semi-arborícola. Veneno de ação proteolítica, coagulante e hemorrágica.
+
+Bothrops alternatus: Cruzeira, urutu, urutu-cruzeira, vibora de la cruz. Marrom bronzeado ou esverdeado com desenhos de ferradura ou gancho de telefone de borda branca. Possuem manchas acastanhadas no ventre. Na cabeça, possui um desenho claro de cruz em fundo escuro. Entre 1 e 1,5 m. É a maior e mais robusta dentre as Bothrops sp. do estado. Atividade crepuscular e noturna. Serpente mais robusta, de campo. Vive em locais úmidos e de vegetação baixa. Costuma entrar nas matas ou plantações para se alimentar, exclusivamente, de pequenos roedores e marsupiais. Veneno de ação proteolítica, coagulante e hemorrágica.
+
+Bothrops pubescens: Jararaca-pintada, jararaca-do-rabo-branco, jararaca-pintada-uruguaia, jararaca-pampeana. Castanha com desenhos em forma de trapézios. Ventre manchado. Mede, em média, 60 cm. Atividade crepuscular e noturna. Espécie comum em campos abertos, como o bioma pampa podendo adentrar nas plantações. É de menor porte e bastante reativa. Veneno de ação proteolítica, coagulante e hemorrágica.
+
+Crotalus durissus: Cascavel. Marrom amarelada com desenhos de losangos mais claros no dorso e nas laterais. Mede até 1,5 m. Período de atividades durante a tarde e a noite, principalmente no crepúsculo. Vive em locais altos, montanhosos, pedregosos, de campo entremeado com mato e invernos frios. Possuem o crepitáculo (chocalho) de anéis córneos na ponta da cauda que, ao se movimentar durante momentos estressantes, emite o som do choque dos anéis. Dificilmente ataca, e anuncia a sua presença através do som do chocalho. Praticam a caça por espreita - permanecem imóveis no solo esperando a passagem da presa (roedor). Veneno de ação neurotóxica, miotóxica e coagulante.
+
+Micrurus altirostris: Coral-verdadeira. A espécie tem como característica a presença de anéis pretos e brancos sobre fundo vermelho. Os anéis circundam todo o corpo. Mede até 80 cm. A atividade ocorre principalmente durante o dia, reduzindo até o período da noite. As corais-verdadeiras têm hábitos fossoriais, vivendo em tocas ou buracos embaixo da terra nas matas ou bordas de matas. Não possuem presas especializadas como as Viperidaes, mas pequenos dentes. Precisam morder e segurar a presa para inocular o veneno. Alimentam-se de outras serpentes. Veneno de ação neurotóxica.
+
+ACIDENTES POR ARANHAS
+
+Os envenenamentos por aranhas predominam no Rio Grande do Sul com relação aos demais acidentes por animais peçonhentos. Existem duas espécies de aranha de importância médica no estado, cujos envenenamentos podem ser tratados com soro antiveneno: Loxosceles intermedia, a aranha-marrom, e Phoneutria nigriventris, a aranha-armadeira. 
+
+Loxosceles intermedia: a aranha-marrom é característica de centros urbanos e pode permanecer dentro das residências, escondidas atrás de mobiliário e, por vezes, no meio das roupas pessoais, roupa de cama e toalhas. Os acidentes ocorrem quando o paciente esmaga a Loxosceles acidentalmente contra o próprio corpo ao se vestir, calçar sapatos ou limpar a casa. Não é uma aranha agressiva e é bastante pequena. O acidente pode levar ao surgimento de áreas de isquemia e necrose na pele, sendo necessário o debridamento tecidual. Pode haver a perda de grandes áreas musculares.
+
+Phoneutria nigriventris: a armadeira é um aracnídeo de maior tamanho e apresenta comportamento reativo – ao se sentir ameaçada, pode saltar sobre a pessoa ou animal, causando o acidente. A armadeira é mais comum em áreas rurais e pode entrar em galpões, porões, e até nas residências durante o período reprodutivo, entre os meses de março e maio, quando os machos se tornam errantes em busca de fêmeas. O acidente causa dor intensa.
+
+ACIDENTES POR ESCORPIÃO
+
+No Rio Grande do Sul há diversas espécies de escorpiões, sendo que a maioria é de baixa toxicidade. Já o Tityus serrulatus, conhecido popularmente como escorpião-amarelo, é o responsável pelos acidentes de alta toxicidade e que, em alguns casos, necessidade de tratamento com soro antiescorpiônico ou antiaracnídico.
+
+Tityus serrulatus: o escorpião-amarelo é exótico no estado, sendo natural de Minas Gerais, e é provável que ele tenha se distribuído por todo o Brasil a partir do transporte humano rodoviário, em meio a produtos como verduras e legumes. Ao chegar em locais novos, se houver alimento (principalmente baratas), água e abrigo o T. serrulatus logo se adapta e se multiplica, tornando-se endêmico. Os principais grupos de risco para acidentes causados por escorpião-amarelo são as crianças e os idosos. Chega, no máximo, a 7 cm de tamanho. Possui o corpo amarelo com detalhes mais escuros no dorso, ponta das pinças e ponta da causa. Ainda, é possível identificá-lo pelas serrilhas presentes na cauda. O veneno do escorpião-amarelo pode causar alterações na frequência cardíaca, respiratória e na pressão arterial.
+
+ACIDENTES POR LAGARTA
+
+Existem diversas lagartas urticantes no Rio Grande do Sul, mas a Lonomia obliqua, conhecida como taturana, é a única que pode causar acidentes graves com a necessidade do uso de soro antilonômico. 
+
+Lonomia obliqua: conhecida como taturana, o seu ciclo de vida é de, em média, 150 dias. A fase de lagarta, que representa perigo devido à presença das cerdas urticantes, tem duração de 60 dias. Durante esta fase da vida, as lagartas permanecem agregadas em troncos de árvores durante o dia e, à noite, sobem para as copas para se alimentar de folhas. Por esta característica de permanecerem agregadas, quando um acidente ocorre, o paciente entra em contato com vários animais ao mesmo tempo. O maior perigo deste acidente é a sua toxina, que pode levar à insuficiência renal aguda.
+
+"""
+
+st.markdown(texto)
