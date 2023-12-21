@@ -268,5 +268,5 @@ with tab3:
     """
 
     st.markdown(texto_metodologia_1)
-    st.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/imagens_metodologia/figura3.png?raw=true', width=700 )
+    st.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/imagens_metodologia/figura3.png?raw=true', width=1200 )
     st.markdown(texto_metodologia_2)
