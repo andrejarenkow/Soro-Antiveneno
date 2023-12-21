@@ -225,30 +225,29 @@ A metodologia utilizada na realização e coleta de informações para originar 
 
 Inicialmente foram introduzidos e espacializados os Pontos Focais (locais onde os soros antivenenos se encontram) no software, de forma que fosse possível a visualização dos mesmos no território do estado do Rio Grande do Sul. Estes Pontos Focais foram adquiridos por meio de uma tabela disponibilizada pelo Centro de Informação Toxicológica (CIT). Juntos dos Pontos Focais foram adicionados pontos das sedes municipais do Rio Grande do Sul (estes pontos foram identificados a partir do centro urbano dos municípios), um shapefile das rodovias do RS e um shapefile de polígonos do estado do RS (Figura 1). 
 
-![Figura 1](https://github.com/andrejarenkow/Soro-Antiveneno/blob/ad07d6871bd2d2a72a455c07798db9f941c58d0c/imagens_metodologia/figura1.png "Figura 1")
+![Figura 1](https://drive.google.com/file/d/1CT2qO-r9n6G1Yf1j1rVO5dgccT3n3Bbe/view?usp=drive_link "Figura 1")
 
-Pontos Focais de Soro Antiveneno, em vermelho. Sedes Municipais, em azul. Rodovias do RS, em marrom.
+###### Pontos Focais de Soro Antiveneno, em vermelho. Sedes Municipais, em azul. Rodovias do RS, em marrom.
 
 Uma vez com todos os dados organizados, foi possível por meio de ferramentas e plugins do QGIS realizar o Network Analysis, onde foi feito um geoprocessamento dos dados para obter as distâncias das sedes municipais até os Pontos Focais de Soro Antiveneno. O geoprocessamento teve como base o plugin QNEAT3 que criou as distâncias em linha reta dos Pontos Focais até as sedes municipais do estado. Como sabemos que o principal meio de transporte da população é o automóvel, foi realizado uma correção das distâncias para que elas fossem feitas utilizando a rede de rodovias do estado (Figura 2). 
 
 ![Figura 2](https://github.com/andrejarenkow/Soro-Antiveneno/blob/4d7b9e4622ae7961ef6711abe27e329891501be0/imagens_metodologia/figura2.png "Figura 2")
 
-Geoprocessamento de Network Analysis realizada para Pontos Focais com Soro Antiveneno SAC.
+###### Geoprocessamento de Network Analysis realizada para Pontos Focais com Soro Antiveneno SAC.
 Em laranja, a distância do Ponto Focal até a sede municipal de cada município do RS, com base nas rodovias do estado.
 
 Como nem todos Pontos Focais têm em seu estoque todos 6 Soros Antivenenos disponibilizados, o geoprocessamento foi realizado seis vezes, uma vez para cada Soro Antiveneno. Uma vez para Pontos Focais com SAB, uma vez para Pontos Focais com SAC, e assim por diante. (Figura 3)
 
 ![Figura 3](https://github.com/andrejarenkow/Soro-Antiveneno/blob/4d7b9e4622ae7961ef6711abe27e329891501be0/imagens_metodologia/figura3.png)
 
-1- Soro antiveneno SAC | 2- Soro antiveneno SAE | 3- Soro antiveneno Saar
+###### 1- Soro antiveneno SAC | 2- Soro antiveneno SAE | 3- Soro antiveneno Saar |
 4- Soro antiveneno SAEsc | 5- Soro antiveneno SAB | 6- Soro antiveneno SALon
 
 Como produto final da metodologia aplicada foram obtidas tabelas dos municípios do Rio Grande do Sul e qual Ponto Focal se localiza mais próximo do mesmo, com distância em km. Foi obtida uma tabela para cada Soro Antiveneno (SAB, SAC, SAE, SAEsc, SALon e Saar). (Figura 4)
 
 ![Figura 4](https://github.com/andrejarenkow/Soro-Antiveneno/blob/4d7b9e4622ae7961ef6711abe27e329891501be0/imagens_metodologia/figura4.png)
 
-Exemplo de tabela gerada após o geoprocessamento dos dados.
-
+###### Exemplo de tabela gerada após o geoprocessamento dos dados.
 Tabela para Soro Antiveneno SAB.
 
 #### Fluxo Metodológico
