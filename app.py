@@ -273,6 +273,6 @@ with tab3:
 
 creditos = st.container(border=True)
 with creditos:
-    st.caption('Aplicação desenvolvida pela equipe da Divisão de Vigilância Ambiental em Saúde do Centro Estadual de Vigilância em Saúde da Secretaria Estadual de Saúde do Rio Grande do Sul')
-    st.caption('Integrantes: Bárbara Mendes Pietoso, Carlo Johannes Lipp Nissinen, Carolina Schell Franceschina e André Jarenkow')
+    st.write('Aplicação desenvolvida pela equipe da Divisão de Vigilância Ambiental em Saúde do Centro Estadual de Vigilância em Saúde da Secretaria Estadual de Saúde do Rio Grande do Sul')
+    st.write('Integrantes: Bárbara Mendes Pietoso, Carlo Johannes Lipp Nissinen, Carolina Schell Franceschina e André Jarenkow')
            
