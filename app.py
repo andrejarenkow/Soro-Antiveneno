@@ -232,12 +232,9 @@ with tab3:
     A metodologia utilizada na realização e coleta de informações para originar o “Buscador de Soros Antivenenos” foi desenvolvida no Software QGIS, a partir de um processo chamado de Network Analysis, com objetivo de adquirir as distâncias dos municípios do Rio Grande do Sul, ao ponto focal de soro antiveneno mais próximo. Para a idealização do projeto foram utilizados dados shapefile (linhas, pontos e polígonos), ferramentas e plugins do programa QGIS.
     
     Inicialmente foram introduzidos e espacializados os Pontos Focais (locais onde os soros antivenenos se encontram) no software, de forma que fosse possível a visualização dos mesmos no território do estado do Rio Grande do Sul. Estes Pontos Focais foram adquiridos por meio de uma tabela disponibilizada pelo Centro de Informação Toxicológica (CIT). Juntos dos Pontos Focais foram adicionados pontos das sedes municipais do Rio Grande do Sul (estes pontos foram identificados a partir do centro urbano dos municípios), um shapefile das rodovias do RS e um shapefile de polígonos do estado do RS (Figura 1). 
-    """
-    #![Figura 1](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/imagens_metodologia/figura1.png?raw=true "Figura 1")
     
-    <img src="https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/imagens_metodologia/figura1.png?raw=true" alt="Descrição da imagem" width="300"/>
+    ![Figura 1](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/imagens_metodologia/figura1.png?raw=true "Figura 1")
     
-    """
     Pontos Focais de Soro Antiveneno, em vermelho. Sedes Municipais, em azul. Rodovias do RS, em marrom.
     
     Uma vez com todos os dados organizados, foi possível por meio de ferramentas e plugins do QGIS realizar o Network Analysis, onde foi feito um geoprocessamento dos dados para obter as distâncias das sedes municipais até os Pontos Focais de Soro Antiveneno. O geoprocessamento teve como base o plugin QNEAT3 que criou as distâncias em linha reta dos Pontos Focais até as sedes municipais do estado. Como sabemos que o principal meio de transporte da população é o automóvel, foi realizado uma correção das distâncias para que elas fossem feitas utilizando a rede de rodovias do estado (Figura 2). 
