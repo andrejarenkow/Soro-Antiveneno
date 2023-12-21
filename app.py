@@ -179,7 +179,7 @@ with col5:
 
 
 texto_sobre = """
-esse é o texto
+# esse é o texto
 """
 
 st.markdown(texto_sobre)
