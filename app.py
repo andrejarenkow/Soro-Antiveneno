@@ -183,8 +183,7 @@ with tab1:
 
 with tab2:
     st.header("Sobre")
-    texto_sobre = 
-    """
+    texto_sobre =     """
     ### SOBRE
     #### ACIDENTES OFÍDICOS
     
