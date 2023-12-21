@@ -24,6 +24,7 @@ col3.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_est
 tab1, tab2, tab3 = st.tabs(["Buscador de Soros", "Sobre", "Metodologia"]
                            
 with tab1:
+    st.header("Buscador de Soros")
     #dicionario soros
     dicionario_explicacao = {
         "SAB - Soro antibotrópico" : ": Esse antídoto é usado para tratamento de envenenamento por serpentes do gênero Bothrops sp. No Rio Grande do Sul encontramos: Bothrops jararaca (jararaca), Bothrops pubescens (jararaca-pintada), Bothrops alternatus (cruzeira), Bothrops diporus (jararaca-pintada) e Bothrops cotiara (cotiara)",
@@ -181,6 +182,7 @@ with tab1:
                 st_data = folium_static(mapa_vazio, width=1000, height=600)
 
 with tab2:
+    st.header("Sobre")
     texto_sobre = 
     """
     ### SOBRE
@@ -226,6 +228,7 @@ with tab2:
 st.markdown(texto_sobre)
     
 with tab3:
+    st.header("Metodologia")
     texto_metodologia = """    
     ### METODOLOGIA
     
