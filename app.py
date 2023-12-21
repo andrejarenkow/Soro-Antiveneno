@@ -242,6 +242,7 @@ with tab3:
     ![Figura 2](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/imagens_metodologia/figura4%20certa.png?raw=true "Figura 2")
     
     Geoprocessamento de Network Analysis realizada para Pontos Focais com Soro Antiveneno SAB.
+    
     Em verde, a distância da sede municipal de cada município do RS até o Ponto Focal mais próximo, com base nas rodovias do estado.
     
     Como nem todos Pontos Focais têm em seu estoque todos 6 Soros Antivenenos disponibilizados, o geoprocessamento foi realizado seis vezes, uma vez para cada Soro Antiveneno. Uma vez para Pontos Focais com SAB, uma vez para Pontos Focais com SAC, e assim por diante. (Figura 3)
