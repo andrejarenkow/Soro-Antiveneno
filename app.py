@@ -10,7 +10,7 @@ from streamlit_folium import st_folium, folium_static
 
 # Configurações da página
 st.set_page_config(
-    page_title="Buscador de soros antiveneno",
+    page_title="Buscador de soros antiveneno no Rio Grande do Sul",
     page_icon="	:snake:",
     layout="wide",
     initial_sidebar_state='collapsed'
@@ -124,7 +124,7 @@ with col5:
         #folium.TileLayer('MapQuest Open Aerial').add_to(mapa)
     
         with col4: 
-            st.subheader('Mapa com soro mais próximo')
+            st.subheader('Hospital mais próximo')
             st_data = folium_static(mapa, width=1000, height=600)
         with col5:
             mun_destino = municipio_origem.dropna()['Município destino'].values[0]
@@ -174,7 +174,7 @@ with col5:
                     popup=endereco,
                     icon=folium.Icon(color="red"),
                 ).add_to(mapa_vazio)
-            st.subheader('Mapa com todos os pontos')
+            st.subheader('Todos os hospitais')
             st_data = folium_static(mapa_vazio, width=1000, height=600)
 
 
