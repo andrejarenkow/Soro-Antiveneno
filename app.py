@@ -270,3 +270,7 @@ with tab3:
     st.markdown(texto_metodologia_1)
     st.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/imagens_metodologia/figura3.png?raw=true', width=1200 )
     st.markdown(texto_metodologia_2)
+
+st.caption('Aplicação desenvolvida pela equipe da Divisão de Vigilância Ambiental em Saúde do Centro Estadual de Vigilância em Saúde da Secretaria Estadual de Saúde do Rio Grande do Sul')
+st.caption('Integrantes: Bárbara Mendes Pietoso, Carlo Johannes Lipp Nissinen, Carolina Schell Franceschina e André Jarenkow')
+           
