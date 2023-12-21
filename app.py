@@ -256,6 +256,8 @@ with tab3:
     
     Como produto final da metodologia aplicada foram obtidas tabelas dos municípios do Rio Grande do Sul e qual Ponto Focal se localiza mais próximo do mesmo, com distância em km. Foi obtida uma tabela para cada Soro Antiveneno (SAB, SAC, SAE, SAEsc, SALon e Saar). (Figura 4)
     
+    ![Figura 4](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/imagens_metodologia/figura4.png?raw=true "Figura 4")
+    
     Exemplo de tabela gerada após o geoprocessamento dos dados.
     Tabela para Soro Antiveneno SAB.
     
