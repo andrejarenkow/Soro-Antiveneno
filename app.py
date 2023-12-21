@@ -239,10 +239,10 @@ with tab3:
     
     Uma vez com todos os dados organizados, foi possível por meio de ferramentas e plugins do QGIS realizar o Network Analysis, onde foi feito um geoprocessamento dos dados para obter as distâncias das sedes municipais até os Pontos Focais de Soro Antiveneno. O geoprocessamento teve como base o plugin QNEAT3 que criou as distâncias em linha reta dos Pontos Focais até as sedes municipais do estado. Como sabemos que o principal meio de transporte da população é o automóvel, foi realizado uma correção das distâncias para que elas fossem feitas utilizando a rede de rodovias do estado (Figura 2). 
     
-    ![Figura 2](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/imagens_metodologia/figura2.png?raw=true "Figura 2")
+    ![Figura 2](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/imagens_metodologia/figura4%20certa.png?raw=true "Figura 2")
     
-    Geoprocessamento de Network Analysis realizada para Pontos Focais com Soro Antiveneno SAC.
-    Em laranja, a distância do Ponto Focal até a sede municipal de cada município do RS, com base nas rodovias do estado.
+    Geoprocessamento de Network Analysis realizada para Pontos Focais com Soro Antiveneno SAB.
+    Em verde, a distância da sede municipal de cada município do RS até o Ponto Focal mais próximo, com base nas rodovias do estado.
     
     Como nem todos Pontos Focais têm em seu estoque todos 6 Soros Antivenenos disponibilizados, o geoprocessamento foi realizado seis vezes, uma vez para cada Soro Antiveneno. Uma vez para Pontos Focais com SAB, uma vez para Pontos Focais com SAC, e assim por diante. (Figura 3)
     """
