@@ -21,7 +21,7 @@ col1.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_cev
 col2.title('Buscador de Soros Antiveneno no Rio Grande do Sul')
 col3.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_estado%20(3).png?raw=true', width=300)
 
-tab1, tab2, tab3 = st.tabs(["Buscador de Soros", "Sobre", "Metodologia"]
+tab1, tab2, tab3 = st.tabs(["Buscador de Soros", "Sobre", "Metodologia"])
                            
 with tab1:
     st.header("Buscador de Soros")
@@ -225,7 +225,7 @@ with tab2:
     **_Lonomia obliqua_**: conhecida como taturana, o seu ciclo de vida é de, em média, 150 dias. A fase de lagarta, que representa perigo devido à presença das cerdas urticantes, tem duração de 60 dias. Durante esta fase da vida, as lagartas permanecem agregadas em troncos de árvores durante o dia e, à noite, sobem para as copas para se alimentar de folhas. Por esta característica de permanecerem agregadas, quando um acidente ocorre, o paciente entra em contato com vários animais ao mesmo tempo. O maior perigo deste acidente é a sua toxina, que pode levar à insuficiência renal aguda.
 
     """
-st.markdown(texto_sobre)
+    st.markdown(texto_sobre)
     
 with tab3:
     st.header("Metodologia")
@@ -267,4 +267,4 @@ with tab3:
     
     """
 
-st.markdown(texto_metodologia)
+    st.markdown(texto_metodologia)
