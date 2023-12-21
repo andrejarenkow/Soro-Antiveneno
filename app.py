@@ -248,7 +248,7 @@ with tab3:
     
     Como nem todos Pontos Focais têm em seu estoque todos 6 Soros Antivenenos disponibilizados, o geoprocessamento foi realizado seis vezes, uma vez para cada Soro Antiveneno. Uma vez para Pontos Focais com SAB, uma vez para Pontos Focais com SAC, e assim por diante. (Figura 3)
     
-    ![Figura 3]("https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/imagens_metodologia/figura3.png?raw=true", width=200)
+    ![Figura 3]("https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/imagens_metodologia/figura3.png?raw=true"){:width="300"}
     
     1- Soro antiveneno SAC | 2- Soro antiveneno SAE | 3- Soro antiveneno Saar |
     4- Soro antiveneno SAEsc | 5- Soro antiveneno SAB | 6- Soro antiveneno SALon
