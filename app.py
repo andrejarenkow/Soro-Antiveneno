@@ -247,7 +247,7 @@ Como produto final da metodologia aplicada foram obtidas tabelas dos municípios
 
 ![Figura 4](https://github.com/andrejarenkow/Soro-Antiveneno/blob/4d7b9e4622ae7961ef6711abe27e329891501be0/imagens_metodologia/figura4.png)
 
-Ecemplo de tabela gerada após o geoprocessamento dos dados.
+Exemplo de tabela gerada após o geoprocessamento dos dados.
 
 Tabela para Soro Antiveneno SAB.
 
