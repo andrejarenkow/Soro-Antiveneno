@@ -178,4 +178,8 @@ with col5:
             st_data = folium_static(mapa_vazio, width=1000, height=600)
 
 
+texto_sobre = """
+esse é o texto
+"""
 
+st.markdown(texto_sobre)
