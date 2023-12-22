@@ -79,7 +79,7 @@ with tab1:
     #municipios
     col5, col4 = st.columns([3, 4]) 
     with col5:  
-        animal = st.selectbox("Por qual animal causadora do acidente?", dados_geral['Animal'].unique(), index=None, placeholder="Selecione o animal")
+        animal = st.selectbox("Por qual animal o acidente foi causado?", dados_geral['Animal'].unique(), index=None, placeholder="Selecione o animal")
         soro = st.selectbox('Soro Antiveneno', dados_geral[dados_geral['Animal']==animal]['soro'].unique(), index=None, placeholder="Selecione o Soro Antiveneno")
             
         try: 
