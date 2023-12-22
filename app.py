@@ -183,7 +183,7 @@ with tab1:
 
 with tab2:
     st.header("Sobre")
-    texto_sobre =     """
+    texto_sobre_1 =     """
     #### ACIDENTES OFÍDICOS
     
     Os acidentes botrópicos são aqueles causados pelas serpentes do gênero _Bothrops_ sp., sendo as mais comuns a jararaca (_Bothrops jararaca_), a cruzeira (_Bothrops alternatus_) e a jararaca-pintada (_Bothrops pubescens_). Eventualmente, ocorrem acidentes com outras duas espécies mais raras, a _Bothrops diporus_ e a _Bothrops cotiara_. Os acidentes crotálicos são aqueles causados pela cascavel (_Crotalus durissus_). No Rio Grande do Sul, os acientes elapídicos são causados, principalmente, pela _Micrurus altirostris_, uma das várias espécies de corais-verdadeiras encontradas no Brasil, e que está distribuída por todo o estado.
@@ -226,8 +226,9 @@ with tab2:
     
     **_Phoneutria nigriventris_**: a armadeira é um aracnídeo de maior tamanho e apresenta comportamento reativo – ao se sentir ameaçada, pode saltar sobre a pessoa ou animal, causando o acidente. A armadeira é mais comum em áreas rurais e pode entrar em galpões, porões, e até nas residências durante o período reprodutivo, entre os meses de março e maio, quando os machos se tornam errantes em busca de fêmeas. O acidente causa dor intensa.
     
-    ![9](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Phoneutria%20-%20armadeira_9.jpeg?raw=true)
-    
+    """
+
+    texto_sobre_2 = """
     #### ACIDENTES POR ESCORPIÃO
     
     No Rio Grande do Sul há diversas espécies de escorpiões, sendo que a maioria é de baixa toxicidade. Já o _Tityus serrulatus_, conhecido popularmente como escorpião-amarelo, é o responsável pelos acidentes de alta toxicidade e que, em alguns casos, necessidade de tratamento com soro antiescorpiônico ou antiaracnídico.
@@ -245,7 +246,9 @@ with tab2:
     ![11](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Taturana-11.jpg?raw=true)
 
     """
-    st.markdown(texto_sobre)
+    st.markdown(texto_sobre_1)
+    st.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Phoneutria%20-%20armadeira_9.jpeg?raw=true', width=500)
+    st.markdown(texto_sobre_2)
     
 with tab3:
     st.header("Metodologia")
