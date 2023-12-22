@@ -312,6 +312,7 @@ with tab2:
     
     Existem diversas lagartas urticantes no Rio Grande do Sul, mas a _Lonomia obliqua_, conhecida como taturana, é a única que pode causar acidentes graves com a necessidade do uso de soro antilonômico. 
     """
+    st.divider()
     st.markdown(texto_lagarta)
     
     texto_lonomia = """
