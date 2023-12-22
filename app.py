@@ -286,7 +286,7 @@ with tab2:
     with phoneutria_container:
         texto, imagem = st.columns(2)
         texto.markdown(texto_phoneutria)
-        imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Phoneutria%20-%20armadeira_9.jpeg?raw=true', width=500) 
+        imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Phoneutria%20-%20armadeira_9.jpeg?raw=true', width=300) 
 
     texto_sobre_escorpiao = """
     #### ACIDENTES POR ESCORPIÃO
