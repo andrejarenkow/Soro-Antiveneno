@@ -304,7 +304,7 @@ with tab2:
     tityus_container = st.container(border=True)
     with tityus_container:
         texto, imagem = st.columns(2)
-        texto.markdown(tityus_container)
+        texto.markdown(texto_tityus)
         imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Tiyus_serrulatus_10.jpg?raw=true', width=500)     
 
     texto_lagarta = """
