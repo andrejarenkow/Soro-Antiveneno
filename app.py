@@ -182,7 +182,7 @@ with tab1:
                 st_data = folium_static(mapa_vazio, width=1000, height=600)
 
 with tab2:
-    st.header("Sobre")
+    st.header("Tipos de acidente")
     texto_sobre_ofidicos =     """
     #### ACIDENTES OFÍDICOS
     
@@ -268,7 +268,7 @@ with tab2:
     
     Os envenenamentos por aranhas predominam no Rio Grande do Sul com relação aos demais acidentes por animais peçonhentos. Existem duas espécies de aranha de importância médica no estado, cujos envenenamentos podem ser tratados com soro antiveneno: _Loxosceles intermedia_, a aranha-marrom, e _Phoneutria nigriventris_, a aranha-armadeira. 
     """
-    st.markdown(texto_sobre_ofidicos)
+    st.markdown(texto_sobre_aranhas)
 
     texto_loxosceles = """
     **_Loxosceles intermedia_**: a aranha-marrom é característica de centros urbanos e pode permanecer dentro das residências, escondidas atrás de mobiliário e, por vezes, no meio das roupas pessoais, roupa de cama e toalhas. Os acidentes ocorrem quando o paciente esmaga a Loxosceles acidentalmente contra o próprio corpo ao se vestir, calçar sapatos ou limpar a casa. Não é uma aranha agressiva e é bastante pequena. O acidente pode levar ao surgimento de áreas de isquemia e necrose na pele, sendo necessário o debridamento tecidual. Pode haver a perda de grandes áreas musculares.
