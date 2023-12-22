@@ -215,7 +215,7 @@ with tab2:
        
     
     
-    texto_bothrops jararaca =  """
+    texto_bothrops_jararaca =  """
     **_Bothrops jararaca_**: Jararaca, jararaca-comum. Marrom-esverdeada, com desenhos escuros em forma de V invertido. Mede em média 1 m. Atividade crepuscular e noturna. Comum em matas e florestas, principalmente nos remanescentes de Mata Atlântica. Semi-arborícola. Veneno de ação proteolítica, coagulante e hemorrágica.
 
     ![3](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/BJararaca_3.jpg?raw=true)
