@@ -208,6 +208,7 @@ with tab2:
     **_Bothrops diporus_**: Jararaca-pintada, jararaca-pintada-argentina. Castanha com desenhos em forma de trapézios. Ventre manchado, semelhante à _B. pubescens_. Pode medir até 1 m. Atividade crepuscular e noturna. Comum em matas e plantações. Bastante adaptada a ambientes modificados pelo homem. Veneno de ação proteolítica, coagulante e hemorrágica.
 
     """
+    bothrops_diporus_container = st.container(border=True)
     with bothrops_diporus_container:
         texto, imagem = st.columns(2)
         texto.markdown(texto_bothrops_diporus)
