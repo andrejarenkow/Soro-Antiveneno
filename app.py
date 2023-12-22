@@ -244,28 +244,51 @@ with tab2:
         texto.markdown(texto_bothrops_pubescens)
         imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/B-pubescens_5.jpg?raw=true', width=500)     
 
-    """
+    texto_crotalus_durissus = """
     **_Crotalus durissus_**: Cascavel. Marrom amarelada com desenhos de losangos mais claros no dorso e nas laterais. Mede até 1,5 m. Período de atividades durante a tarde e a noite, principalmente no crepúsculo. Vive em locais altos, montanhosos, pedregosos, de campo entremeado com mato e invernos frios. Possuem o crepitáculo (chocalho) de anéis córneos na ponta da cauda que, ao se movimentar durante momentos estressantes, emite o som do choque dos anéis. Dificilmente ataca, e anuncia a sua presença através do som do chocalho. Praticam a caça por espreita - permanecem imóveis no solo esperando a passagem da presa (roedor). Veneno de ação neurotóxica, miotóxica e coagulante.
+    """
+    crotalus_durissus_container = st.container(border=True)
+    with crotalus_durissus_container:
+        texto, imagem = st.columns(2)
+        texto.markdown(texto_crotalus_durissus)
+        imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Crotalus_durissus_6.jpg?raw=true', width=500)   
     
-    ![6](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Crotalus_durissus_6.jpg?raw=true)
-    
+
+    texto_micrurus_altirostris = """
     **_Micrurus altirostris_**: Coral-verdadeira. A espécie tem como característica a presença de anéis pretos e brancos sobre fundo vermelho. Os anéis circundam todo o corpo. Mede até 80 cm. A atividade ocorre principalmente durante o dia, reduzindo até o período da noite. As corais-verdadeiras têm hábitos fossoriais, vivendo em tocas ou buracos embaixo da terra nas matas ou bordas de matas. Não possuem presas especializadas como as Viperidaes, mas pequenos dentes. Precisam morder e segurar a presa para inocular o veneno. Alimentam-se de outras serpentes. Veneno de ação neurotóxica.
-    
-    ![7](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/M-altirostris_7.jpg?raw=true)
-    
+    """
+    micrurus_altirostris_container = st.container(border=True)
+    with micrurus_altirostris_container:
+        texto, imagem = st.columns(2)
+        texto.markdown(texto_micrurus_altirostris)
+        imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/M-altirostris_7.jpg?raw=true', width=500) 
+
+    texto_sobre_aranhas = """
     #### ACIDENTES POR ARANHAS
     
     Os envenenamentos por aranhas predominam no Rio Grande do Sul com relação aos demais acidentes por animais peçonhentos. Existem duas espécies de aranha de importância médica no estado, cujos envenenamentos podem ser tratados com soro antiveneno: _Loxosceles intermedia_, a aranha-marrom, e _Phoneutria nigriventris_, a aranha-armadeira. 
-    
-    **_Loxosceles intermedia_**: a aranha-marrom é característica de centros urbanos e pode permanecer dentro das residências, escondidas atrás de mobiliário e, por vezes, no meio das roupas pessoais, roupa de cama e toalhas. Os acidentes ocorrem quando o paciente esmaga a Loxosceles acidentalmente contra o próprio corpo ao se vestir, calçar sapatos ou limpar a casa. Não é uma aranha agressiva e é bastante pequena. O acidente pode levar ao surgimento de áreas de isquemia e necrose na pele, sendo necessário o debridamento tecidual. Pode haver a perda de grandes áreas musculares.
-    
-    ![8](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/thumbnail_Loxosceles%20-%20aranha-marrom_8.jpg?raw=true)
-    
-    **_Phoneutria nigriventris_**: a armadeira é um aracnídeo de maior tamanho e apresenta comportamento reativo – ao se sentir ameaçada, pode saltar sobre a pessoa ou animal, causando o acidente. A armadeira é mais comum em áreas rurais e pode entrar em galpões, porões, e até nas residências durante o período reprodutivo, entre os meses de março e maio, quando os machos se tornam errantes em busca de fêmeas. O acidente causa dor intensa.
-    
     """
+    st.markdown(texto_sobre_ofidicos)
 
-    texto_sobre_3 = """
+    texto_loxosceles = """
+    **_Loxosceles intermedia_**: a aranha-marrom é característica de centros urbanos e pode permanecer dentro das residências, escondidas atrás de mobiliário e, por vezes, no meio das roupas pessoais, roupa de cama e toalhas. Os acidentes ocorrem quando o paciente esmaga a Loxosceles acidentalmente contra o próprio corpo ao se vestir, calçar sapatos ou limpar a casa. Não é uma aranha agressiva e é bastante pequena. O acidente pode levar ao surgimento de áreas de isquemia e necrose na pele, sendo necessário o debridamento tecidual. Pode haver a perda de grandes áreas musculares.
+    """
+    loxosceles_container = st.container(border=True)
+    with loxosceles_container:
+        texto, imagem = st.columns(2)
+        texto.markdown(texto_loxosceles)
+        imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/thumbnail_Loxosceles%20-%20aranha-marrom_8.jpg?raw=true', width=500) 
+    
+    texto_phoneutria = """
+    **_Phoneutria nigriventris_**: a armadeira é um aracnídeo de maior tamanho e apresenta comportamento reativo – ao se sentir ameaçada, pode saltar sobre a pessoa ou animal, causando o acidente. A armadeira é mais comum em áreas rurais e pode entrar em galpões, porões, e até nas residências durante o período reprodutivo, entre os meses de março e maio, quando os machos se tornam errantes em busca de fêmeas. O acidente causa dor intensa.
+    """
+    phoneutria_container = st.container(border=True)
+    with phoneutria_container:
+        texto, imagem = st.columns(2)
+        texto.markdown(texto_phoneutria)
+        imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Phoneutria%20-%20armadeira_9.jpeg?raw=true', width=500) 
+
+    texto_sobre_escorpiao = """
     #### ACIDENTES POR ESCORPIÃO
     
     No Rio Grande do Sul há diversas espécies de escorpiões, sendo que a maioria é de baixa toxicidade. Já o _Tityus serrulatus_, conhecido popularmente como escorpião-amarelo, é o responsável pelos acidentes de alta toxicidade e que, em alguns casos, necessidade de tratamento com soro antiescorpiônico ou antiaracnídico.
@@ -285,9 +308,8 @@ with tab2:
     """
     
     
-    st.markdown(texto_sobre_2)
-    st.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Phoneutria%20-%20armadeira_9.jpeg?raw=true', width=500)
-    st.markdown(texto_sobre_3)
+    st.markdown(texto_sobre_escorpiao)
+
     
     
 with tab3:
