@@ -184,7 +184,7 @@ with tab1:
 with tab2:
     st.header("Tipos de acidente")
     texto_sobre_ofidicos =     """
-    #### ACIDENTES OFÍDICOS
+    ### ACIDENTES OFÍDICOS
     
     Os acidentes botrópicos são aqueles causados pelas serpentes do gênero _Bothrops_ sp., sendo as mais comuns a jararaca (_Bothrops jararaca_), a cruzeira (_Bothrops alternatus_) e a jararaca-pintada (_Bothrops pubescens_). Eventualmente, ocorrem acidentes com outras duas espécies mais raras, a _Bothrops diporus_ e a _Bothrops cotiara_. Os acidentes crotálicos são aqueles causados pela cascavel (_Crotalus durissus_). No Rio Grande do Sul, os acientes elapídicos são causados, principalmente, pela _Micrurus altirostris_, uma das várias espécies de corais-verdadeiras encontradas no Brasil, e que está distribuída por todo o estado.
     """
@@ -265,7 +265,7 @@ with tab2:
         
     st.divider()
     texto_sobre_aranhas = """
-    #### ACIDENTES POR ARANHAS
+    ### ACIDENTES POR ARANHAS
     
     Os envenenamentos por aranhas predominam no Rio Grande do Sul com relação aos demais acidentes por animais peçonhentos. Existem duas espécies de aranha de importância médica no estado, cujos envenenamentos podem ser tratados com soro antiveneno: _Loxosceles intermedia_, a aranha-marrom, e _Phoneutria nigriventris_, a aranha-armadeira. 
     """
@@ -290,7 +290,7 @@ with tab2:
         imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Phoneutria%20-%20armadeira_9.jpeg?raw=true', width=300) 
 
     texto_sobre_escorpiao = """
-    #### ACIDENTES POR ESCORPIÃO
+    ### ACIDENTES POR ESCORPIÃO
     
     No Rio Grande do Sul há diversas espécies de escorpiões, sendo que a maioria é de baixa toxicidade. Já o _Tityus serrulatus_, conhecido popularmente como escorpião-amarelo, é o responsável pelos acidentes de alta toxicidade e que, em alguns casos, necessidade de tratamento com soro antiescorpiônico ou antiaracnídico.
     """
@@ -308,7 +308,7 @@ with tab2:
         imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Tiyus_serrulatus_10.jpg?raw=true', width=500)     
 
     texto_lagarta = """
-    #### ACIDENTES POR LAGARTA
+    ### ACIDENTES POR LAGARTA
     
     Existem diversas lagartas urticantes no Rio Grande do Sul, mas a _Lonomia obliqua_, conhecida como taturana, é a única que pode causar acidentes graves com a necessidade do uso de soro antilonômico. 
     """
