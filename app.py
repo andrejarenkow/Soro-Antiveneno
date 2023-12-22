@@ -262,7 +262,8 @@ with tab2:
         texto, imagem = st.columns(2)
         texto.markdown(texto_micrurus_altirostris)
         imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/M-altirostris_7.jpg?raw=true', width=500) 
-
+        
+    st.divider()
     texto_sobre_aranhas = """
     #### ACIDENTES POR ARANHAS
     
@@ -292,23 +293,37 @@ with tab2:
     #### ACIDENTES POR ESCORPIÃO
     
     No Rio Grande do Sul há diversas espécies de escorpiões, sendo que a maioria é de baixa toxicidade. Já o _Tityus serrulatus_, conhecido popularmente como escorpião-amarelo, é o responsável pelos acidentes de alta toxicidade e que, em alguns casos, necessidade de tratamento com soro antiescorpiônico ou antiaracnídico.
+    """
+    st.divider()
+    st.markdown(texto_sobre_escorpiao)
     
+
+    texto_tityus = """
     **_Tityus serrulatus_**: o escorpião-amarelo é exótico no estado, sendo natural de Minas Gerais, e é provável que ele tenha se distribuído por todo o Brasil a partir do transporte humano rodoviário, em meio a produtos como verduras e legumes. Ao chegar em locais novos, se houver alimento (principalmente baratas), água e abrigo o T. serrulatus logo se adapta e se multiplica, tornando-se endêmico. Os principais grupos de risco para acidentes causados por escorpião-amarelo são as crianças e os idosos. Chega, no máximo, a 7 cm de tamanho. Possui o corpo amarelo com detalhes mais escuros no dorso, ponta das pinças e ponta da causa. Ainda, é possível identificá-lo pelas serrilhas presentes na cauda. O veneno do escorpião-amarelo pode causar alterações na frequência cardíaca, respiratória e na pressão arterial.
-    
-    ![10](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Tiyus_serrulatus_10.jpg?raw=true)
-    
+    """
+    tityus_container = st.container(border=True)
+    with tityus_container:
+        texto, imagem = st.columns(2)
+        texto.markdown(tityus_container)
+        imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Tiyus_serrulatus_10.jpg?raw=true', width=500)     
+
+    texto_lagarta = """
     #### ACIDENTES POR LAGARTA
     
     Existem diversas lagartas urticantes no Rio Grande do Sul, mas a _Lonomia obliqua_, conhecida como taturana, é a única que pode causar acidentes graves com a necessidade do uso de soro antilonômico. 
-    
-    **_Lonomia obliqua_**: conhecida como taturana, o seu ciclo de vida é de, em média, 150 dias. A fase de lagarta, que representa perigo devido à presença das cerdas urticantes, tem duração de 60 dias. Durante esta fase da vida, as lagartas permanecem agregadas em troncos de árvores durante o dia e, à noite, sobem para as copas para se alimentar de folhas. Por esta característica de permanecerem agregadas, quando um acidente ocorre, o paciente entra em contato com vários animais ao mesmo tempo. O maior perigo deste acidente é a sua toxina, que pode levar à insuficiência renal aguda.
-
-    ![11](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Taturana-11.jpg?raw=true)
-
     """
+    st.markdown(texto_lagarta)
     
+    texto_lonomia = """
+    **_Lonomia obliqua_**: conhecida como taturana, o seu ciclo de vida é de, em média, 150 dias. A fase de lagarta, que representa perigo devido à presença das cerdas urticantes, tem duração de 60 dias. Durante esta fase da vida, as lagartas permanecem agregadas em troncos de árvores durante o dia e, à noite, sobem para as copas para se alimentar de folhas. Por esta característica de permanecerem agregadas, quando um acidente ocorre, o paciente entra em contato com vários animais ao mesmo tempo. O maior perigo deste acidente é a sua toxina, que pode levar à insuficiência renal aguda.
+    """
+    lonomia_container = st.container(border=True)
+    with lonomia_container:
+        texto, imagem = st.columns(2)
+        texto.markdown(texto_lonomia)
+        imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Taturana-11.jpg?raw=true', width=500)       
     
-    st.markdown(texto_sobre_escorpiao)
+
 
     
     
