@@ -218,17 +218,33 @@ with tab2:
     
     texto_bothrops_jararaca =  """
     **_Bothrops jararaca_**: Jararaca, jararaca-comum. Marrom-esverdeada, com desenhos escuros em forma de V invertido. Mede em média 1 m. Atividade crepuscular e noturna. Comum em matas e florestas, principalmente nos remanescentes de Mata Atlântica. Semi-arborícola. Veneno de ação proteolítica, coagulante e hemorrágica.
-
-    ![3](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/BJararaca_3.jpg?raw=true)
-    
+"""
+    bothrops_jararaca_container = st.container(border=True)
+    with bothrops_jararaca_container:
+        texto, imagem = st.columns(2)
+        texto.markdown(texto_bothrops_jararaca)
+        imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/BJararaca_3.jpg?raw=true', width=500)        
+ 
+    texto_bothrops_alternatus = """
     **_Bothrops alternatus_**: Cruzeira, urutu, urutu-cruzeira, vibora de la cruz. Marrom bronzeado ou esverdeado com desenhos de ferradura ou gancho de telefone de borda branca. Possuem manchas acastanhadas no ventre. Na cabeça, possui um desenho claro de cruz em fundo escuro. Entre 1 e 1,5 m. É a maior e mais robusta dentre as _Bothrops_ sp. do estado. Atividade crepuscular e noturna. Serpente mais robusta, de campo. Vive em locais úmidos e de vegetação baixa. Costuma entrar nas matas ou plantações para se alimentar, exclusivamente, de pequenos roedores e marsupiais. Veneno de ação proteolítica, coagulante e hemorrágica.
+"""
+    bothrops_alternatus_container = st.container(border=True)
+    with bothrops_alternatus_container:
+        texto, imagem = st.columns(2)
+        texto.markdown(texto_bothrops_alternatus)
+        imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Balternathus_4.jpg?raw=true', width=500) 
 
-    ![4](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Balternathus_4.jpg?raw=true)
     
+    texto_bothrops_pubescens = """
     **_Bothrops pubescens_**: Jararaca-pintada, jararaca-do-rabo-branco, jararaca-pintada-uruguaia, jararaca-pampeana. Castanha com desenhos em forma de trapézios. Ventre manchado. Mede, em média, 60 cm. Atividade crepuscular e noturna. Espécie comum em campos abertos, como o bioma pampa podendo adentrar nas plantações. É de menor porte e bastante reativa. Veneno de ação proteolítica, coagulante e hemorrágica.
-    
-    ![5](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/B-pubescens_5.jpg?raw=true)
-    
+    """
+    bothrops_pubescens_container = st.container(border=True)
+    with bothrops_pubescens_container:
+        texto, imagem = st.columns(2)
+        texto.markdown(texto_bothrops_pubescens)
+        imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/B-pubescens_5.jpg?raw=true', width=500)     
+
+    """
     **_Crotalus durissus_**: Cascavel. Marrom amarelada com desenhos de losangos mais claros no dorso e nas laterais. Mede até 1,5 m. Período de atividades durante a tarde e a noite, principalmente no crepúsculo. Vive em locais altos, montanhosos, pedregosos, de campo entremeado com mato e invernos frios. Possuem o crepitáculo (chocalho) de anéis córneos na ponta da cauda que, ao se movimentar durante momentos estressantes, emite o som do choque dos anéis. Dificilmente ataca, e anuncia a sua presença através do som do chocalho. Praticam a caça por espreita - permanecem imóveis no solo esperando a passagem da presa (roedor). Veneno de ação neurotóxica, miotóxica e coagulante.
     
     ![6](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Crotalus_durissus_6.jpg?raw=true)
