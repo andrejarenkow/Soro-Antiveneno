@@ -204,12 +204,18 @@ with tab2:
     
     
     
-    """
+    texto_bothrops_diporus = """
     **_Bothrops diporus_**: Jararaca-pintada, jararaca-pintada-argentina. Castanha com desenhos em forma de trapézios. Ventre manchado, semelhante à _B. pubescens_. Pode medir até 1 m. Atividade crepuscular e noturna. Comum em matas e plantações. Bastante adaptada a ambientes modificados pelo homem. Veneno de ação proteolítica, coagulante e hemorrágica.
 
     """
+    with bothrops_diporus_container:
+        texto, imagem = st.columns(2)
+        texto.markdown(texto_bothrops_diporus)
+        imagem.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Bothrops_diporus_2.jpg?raw=true', width=500)    
+       
     
-    texto_sobre_2 =  """
+    
+    texto_bothrops jararaca =  """
     **_Bothrops jararaca_**: Jararaca, jararaca-comum. Marrom-esverdeada, com desenhos escuros em forma de V invertido. Mede em média 1 m. Atividade crepuscular e noturna. Comum em matas e florestas, principalmente nos remanescentes de Mata Atlântica. Semi-arborícola. Veneno de ação proteolítica, coagulante e hemorrágica.
 
     ![3](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/BJararaca_3.jpg?raw=true)
@@ -261,7 +267,7 @@ with tab2:
 
     """
     
-    st.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Bothrops_diporus_2.jpg?raw=true', width=500)
+    
     st.markdown(texto_sobre_2)
     st.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Phoneutria%20-%20armadeira_9.jpeg?raw=true', width=500)
     st.markdown(texto_sobre_3)
