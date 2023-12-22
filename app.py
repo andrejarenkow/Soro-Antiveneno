@@ -183,15 +183,28 @@ with tab1:
 
 with tab2:
     st.header("Sobre")
-    texto_sobre_1 =     """
+    texto_sobre_ofidicos =     """
     #### ACIDENTES OFÍDICOS
     
     Os acidentes botrópicos são aqueles causados pelas serpentes do gênero _Bothrops_ sp., sendo as mais comuns a jararaca (_Bothrops jararaca_), a cruzeira (_Bothrops alternatus_) e a jararaca-pintada (_Bothrops pubescens_). Eventualmente, ocorrem acidentes com outras duas espécies mais raras, a _Bothrops diporus_ e a _Bothrops cotiara_. Os acidentes crotálicos são aqueles causados pela cascavel (_Crotalus durissus_). No Rio Grande do Sul, os acientes elapídicos são causados, principalmente, pela _Micrurus altirostris_, uma das várias espécies de corais-verdadeiras encontradas no Brasil, e que está distribuída por todo o estado.
-       
+    """
+
+    st.markdown(texto_sobre_ofidicos)
+    
+    texto_bothrops_cotiara = """
     **_Bothrops cotiara_**: Cotiara, jararaca-da-barriga-preta, jararaca-preta. Apresenta coloração castanha esverdeada com desenhos de trapézios. O ventre é preto. Comprimento de, em média, 80 cm. Atividade noturna. Serpente terrícola de baixa densidade populacional, distribui-se ao norte do estado, nas áreas de mata de araucária - ecossistema que já foi amplamente reduzido. Desta forma, a cotiara encontra-se em ameaça de extinção do Rio Grande do Sul. Alimenta-se exclusivamente de pequenos roedores e marsupiais. Veneno de ação proteolítica, coagulante e hemorrágica.
+    """
+    imagem_bothrops_cotiara = 'https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/BCotiara_1.jpg?raw=true'
     
-    ![1](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/BCotiara_1.jpg?raw=true) 
+    bothrops_cotiara_container = st.container(border=True)
+    with bothrops_cotiara_container:
+        texto, imagem = st.columns(2)
+        texto.markdown(texto_bothrops_cotiara)
+        imagem.image(imagem_bothrops_cotiara, width=500)
     
+    
+    
+    """
     **_Bothrops diporus_**: Jararaca-pintada, jararaca-pintada-argentina. Castanha com desenhos em forma de trapézios. Ventre manchado, semelhante à _B. pubescens_. Pode medir até 1 m. Atividade crepuscular e noturna. Comum em matas e plantações. Bastante adaptada a ambientes modificados pelo homem. Veneno de ação proteolítica, coagulante e hemorrágica.
 
     """
@@ -247,7 +260,7 @@ with tab2:
     ![11](https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Taturana-11.jpg?raw=true)
 
     """
-    st.markdown(texto_sobre_1)
+    
     st.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Bothrops_diporus_2.jpg?raw=true', width=500)
     st.markdown(texto_sobre_2)
     st.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/Phoneutria%20-%20armadeira_9.jpeg?raw=true', width=500)
