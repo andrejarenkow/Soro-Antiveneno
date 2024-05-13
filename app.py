@@ -374,6 +374,40 @@ with tab3:
     st.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/imagens_metodologia/figura3.png?raw=true', width=1200 )
     st.markdown(texto_metodologia_2)
 
+with tab_emergencia:
+    dados_todos = pd.DataFrame()
+    abas = ['SAB', 'SAAR', 'SAC', 'SAEL', 'SAEsc', 'SALON', 'SABC']
+    
+    for i in abas:
+    
+      dados = pd.read_excel('https://docs.google.com/spreadsheets/d/e/2PACX-1vSRHKbwxnZ_2aTw2nub-8Gp3cSZj5leSyyRMGRWquVhbffvxFLDdP6QW8MA-HKoXQ/pub?output=xlsx', skiprows=3, sheet_name=abas[1])
+    
+      dados = dados.drop(['Lote',	'Data de vencimento'], axis=1)
+    
+      dados['Regional'] = dados['Regional'].fillna(method='ffill')
+      #dados = dados.dropna(subset=['N° de Ampolas'])
+      dados['Soro'] = i
+      dados_todos = pd.concat([dados_todos, dados])
+      dados_todos = dados_todos.reset_index(drop=True)
+    
+    
+    # Atualizar o valor da coluna 'Município' para 'Porto Alegre' onde 'Regional' é 'CEADI'
+    dados_todos.loc[dados_todos['Regional'] == 'CEADI', 'Município'] = 'Porto Alegre'
+    dados_todos['Município'] = dados_todos['Município'].fillna(method='ffill')
+    dados_todos['Unidade de Saúde'] = dados_todos['Unidade de Saúde'].fillna(method='ffill')
+    dados_todos = dados_todos[dados_todos['Município']!='TOTAL']
+    dados_todos = dados_todos[dados_todos['Regional']!='TOTAL DISTRIBUÍDO']
+    dados_todos = dados_todos[~dados_todos['Unidade de Saúde'].astype(str).str.isdigit()]
+    dados_todos = dados_todos[['Regional', 'Município', 'Unidade de Saúde', 'N° de Ampolas', 'Soro']]
+    dados_todos['N° de Ampolas'] = dados_todos['N° de Ampolas'].fillna(0)
+    
+    dados_todos = dados_todos.reset_index(drop=True)
+    dados_todos['Município'] = dados_todos['Município'].replace({
+        'São Luiza Gonzaga':'São Luiz Gonzaga',
+        'Canguçú':'Canguçu'
+    }).str.strip()
+    dados_todos
+
 creditos = st.container(border=True)
 with creditos:
     st.write('Aplicação desenvolvida pela equipe da Divisão de Vigilância Ambiental em Saúde do Centro Estadual de Vigilância em Saúde da Secretaria Estadual de Saúde do Rio Grande do Sul')
