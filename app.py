@@ -422,10 +422,9 @@ with tab_emergencia:
                                    )
     fig_estoque.update_layout(mapbox_style="carto-darkmatter")
     fig_estoque.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-    st.plotly_chart(fig_estoque)
+    st.subheader(f'Locais com estoque de {soro} no RS')
     coluna_tabela_soro, coluna_mapa_soro = st.columns(2)
-    
-    coluna_mapa_soro.subheader(f'Locais com estoque de {soro} no RS')
+    coluna_mapa_soro.plotly_chart(fig_estoque)
     coluna_tabela_soro.dataframe(dados_todos_soro.sort_values('Município'), hide_index=True, height=600)
 
 
