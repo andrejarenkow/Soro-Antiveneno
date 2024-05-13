@@ -419,10 +419,11 @@ with tab_emergencia:
     dados_todos_soro = dados_todos[dados_todos['Soro']==soro]
     fig_estoque = px.scatter_mapbox(dados_soro, lat="lat", lon="lon", hover_name="Município", hover_data=["N° de Ampolas"],
                             zoom=5.5, height=600, size="N° de Ampolas", color_discrete_sequence=["#DBB2FF"],
-                                   title=f'Locais com estoque de {soro} no RS')
+                                   )
     fig_estoque.update_layout(mapbox_style="carto-darkmatter")
     fig_estoque.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     coluna_tabela_soro, coluna_mapa_soro = st.columns(2)
+    coluna_mapa_soro.subheader(f'Locais com estoque de {soro} no RS')
     coluna_mapa_soro.plotly_chart(fig_estoque)
     coluna_tabela_soro.dataframe(dados_todos_soro.sort_values('Município'), hide_index=True, height=600)
 
