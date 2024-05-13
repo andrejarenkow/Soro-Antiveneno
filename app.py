@@ -416,6 +416,7 @@ with tab_emergencia:
     dados_soro = dados_soro.groupby('Município')['N° de Ampolas'].sum().reset_index()
     dados_lat_lon = pd.read_csv('https://raw.githubusercontent.com/andrejarenkow/csv/master/Munic%C3%ADpios%20RS%20IBGE6%20Popula%C3%A7%C3%A3o%20CRS%20Regional%20-%20P%C3%A1gina1.csv')
     dados_soro = dados_soro.merge(dados_lat_lon, on='Município', how='left')
+    dados_soro
     fig_estoque = px.scatter_mapbox(dados_soro, lat="lat", lon="lon", hover_name="Município", hover_data=["N° de Ampolas"],
                             zoom=5.5, height=800, size="N° de Ampolas", color_discrete_sequence=["#DBB2FF"])
     #fig_estoque.update_layout(mapbox_style="carto-darkmatter")
