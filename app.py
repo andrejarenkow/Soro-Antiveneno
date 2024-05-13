@@ -419,7 +419,7 @@ with tab_emergencia:
     dados_soro
     fig_estoque = px.scatter_mapbox(dados_soro, lat="lat", lon="lon", hover_name="Município", hover_data=["N° de Ampolas"],
                             zoom=5.5, height=800, size="N° de Ampolas", color_discrete_sequence=["#DBB2FF"])
-    #fig_estoque.update_layout(mapbox_style="carto-darkmatter")
+    fig_estoque.update_layout(mapbox_style="carto-darkmatter")
     fig_estoque.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     st.plotly_chart(fig_estoque)
 
