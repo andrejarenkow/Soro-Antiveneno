@@ -424,7 +424,7 @@ with tab_emergencia:
     fig_estoque.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     coluna_tabela_soro, coluna_mapa_soro = st.columns(2)
     coluna_mapa_soro.plotly_chart(fig_estoque)
-    coluna_tabela_soro.dataframe(dados_todos_soro.sort_values('Município'), hide_index=True)
+    coluna_tabela_soro.dataframe(dados_todos_soro.sort_values('Município'), hide_index=True, height=600)
 
 
 
