@@ -179,7 +179,7 @@ with tab1:
                         icon=folium.Icon(color="red"),
                     ).add_to(mapa_vazio)
                 st.subheader('Todos os hospitais')
-                st_data = folium_static(mapa_vazio, width=800, height=600)
+                st_data = folium_static(mapa_vazio, width=500, height=600)
 
 with tab2:
     st.header("Tipos de acidente")
