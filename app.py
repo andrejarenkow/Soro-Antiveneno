@@ -21,7 +21,7 @@ col1.image('https://github.com/andrejarenkow/csv/blob/master/logo_cevs%20(2).png
 col2.title('Buscador de Soros Antiveneno no Rio Grande do Sul')
 col3.image('https://github.com/andrejarenkow/csv/blob/master/logo_estado%20(3)%20(1).png?raw=true', width=300)
 
-tab_emergencia, tab1, tab2, tab3 = st.tabs(['Estoque manual', "Buscador de Soros", "Sobre", "Metodologia"])
+ tab1, tab_emergencia, tab2, tab3 = st.tabs([ "Buscador de Soros", 'Estoque', "Sobre", "Metodologia"])
                            
 with tab1:
     st.header("Buscador de Soros")
