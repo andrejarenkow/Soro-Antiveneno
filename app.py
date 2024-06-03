@@ -21,7 +21,7 @@ col1.image('https://github.com/andrejarenkow/csv/blob/master/logo_cevs%20(2).png
 col2.title('Buscador de Soros Antiveneno no Rio Grande do Sul')
 col3.image('https://github.com/andrejarenkow/csv/blob/master/logo_estado%20(3)%20(1).png?raw=true', width=300)
 
-tab1, tab_emergencia, tab2, tab3 = st.tabs([ "Buscador de Soros", 'Estoque', "Sobre", "Metodologia"])
+tab1, tab2, tab3 = st.tabs([ "Buscador de Soros", "Sobre", "Metodologia"])
                            
 with tab1:
     st.header("Buscador de Soros")
@@ -374,58 +374,58 @@ with tab3:
     st.image('https://github.com/andrejarenkow/Soro-Antiveneno/blob/main/imagens_metodologia/figura3.png?raw=true', width=1200 )
     st.markdown(texto_metodologia_2)
 
-with tab_emergencia:
-    dados_todos = pd.DataFrame()
-    abas = ['SAB', 'SAAR', 'SAC', 'SAEL', 'SAEsc', 'SALON', 'SABC']
+#with tab_emergencia:
+#    dados_todos = pd.DataFrame()
+#    abas = ['SAB', 'SAAR', 'SAC', 'SAEL', 'SAEsc', 'SALON', 'SABC']
     
-    for i in abas:
+#    for i in abas:
     
-      dados = pd.read_excel('https://docs.google.com/spreadsheets/d/e/2PACX-1vSRHKbwxnZ_2aTw2nub-8Gp3cSZj5leSyyRMGRWquVhbffvxFLDdP6QW8MA-HKoXQ/pub?output=xlsx', skiprows=3, sheet_name=i) 
+#      dados = pd.read_excel('https://docs.google.com/spreadsheets/d/e/2PACX-1vSRHKbwxnZ_2aTw2nub-8Gp3cSZj5leSyyRMGRWquVhbffvxFLDdP6QW8MA-HKoXQ/pub?output=xlsx', skiprows=3, sheet_name=i) 
     
-      dados = dados.drop(['Lote',	'Data de vencimento'], axis=1)
+#      dados = dados.drop(['Lote',	'Data de vencimento'], axis=1)
     
-      dados['Regional'] = dados['Regional'].ffill()
+#      dados['Regional'] = dados['Regional'].ffill()
       #dados = dados.dropna(subset=['N° de Ampolas'])
-      dados['Soro'] = i
-      dados_todos = pd.concat([dados_todos, dados])
-      dados_todos = dados_todos.reset_index(drop=True)
+      #dados['Soro'] = i
+      #dados_todos = pd.concat([dados_todos, dados])
+      #dados_todos = dados_todos.reset_index(drop=True)
     
     
     # Atualizar o valor da coluna 'Município' para 'Porto Alegre' onde 'Regional' é 'CEADI'
-    dados_todos.loc[dados_todos['Regional'] == 'CEADI', 'Município'] = 'Porto Alegre'
-    dados_todos['Município'] = dados_todos['Município'].fillna(method='ffill')
-    dados_todos['Unidade de Saúde'] = dados_todos['Unidade de Saúde'].fillna(method='ffill')
-    dados_todos = dados_todos[dados_todos['Município']!='TOTAL']
-    dados_todos = dados_todos[dados_todos['Regional']!='TOTAL DISTRIBUÍDO']
-    dados_todos = dados_todos[~dados_todos['Unidade de Saúde'].astype(str).str.isdigit()]
-    dados_todos = dados_todos[['Regional', 'Município', 'Unidade de Saúde', 'N° de Ampolas', 'Soro']]
-    dados_todos['N° de Ampolas'] = dados_todos['N° de Ampolas'].fillna(0)
+    #dados_todos.loc[dados_todos['Regional'] == 'CEADI', 'Município'] = 'Porto Alegre'
+    #dados_todos['Município'] = dados_todos['Município'].fillna(method='ffill')
+    #dados_todos['Unidade de Saúde'] = dados_todos['Unidade de Saúde'].fillna(method='ffill')
+    #dados_todos = dados_todos[dados_todos['Município']!='TOTAL']
+    #dados_todos = dados_todos[dados_todos['Regional']!='TOTAL DISTRIBUÍDO']
+    #dados_todos = dados_todos[~dados_todos['Unidade de Saúde'].astype(str).str.isdigit()]
+    #dados_todos = dados_todos[['Regional', 'Município', 'Unidade de Saúde', 'N° de Ampolas', 'Soro']]
+    #dados_todos['N° de Ampolas'] = dados_todos['N° de Ampolas'].fillna(0)
     
-    dados_todos = dados_todos.reset_index(drop=True)
-    dados_todos['Município'] = dados_todos['Município'].replace({
-        'São Luiza Gonzaga':'São Luiz Gonzaga',
-        'Canguçú':'Canguçu'
-    }).str.strip()
+    #dados_todos = dados_todos.reset_index(drop=True)
+    #dados_todos['Município'] = dados_todos['Município'].replace({
+    #    'São Luiza Gonzaga':'São Luiz Gonzaga',
+    #    'Canguçú':'Canguçu'
+    #}).str.strip()
     
     # Estoque por município
-    'O estoque é atualizado diariamente.'
-    soro = st.selectbox('Selecione o soro', options=abas, index=0)
+    #'O estoque é atualizado diariamente.'
+    #soro = st.selectbox('Selecione o soro', options=abas, index=0)
     
-    dados_soro = dados_todos[dados_todos['Soro']==soro]
+    #dados_soro = dados_todos[dados_todos['Soro']==soro]
     
-    dados_soro = dados_soro.groupby('Município')['N° de Ampolas'].sum().reset_index()
-    dados_lat_lon = pd.read_csv('https://raw.githubusercontent.com/andrejarenkow/csv/master/Munic%C3%ADpios%20RS%20IBGE6%20Popula%C3%A7%C3%A3o%20CRS%20Regional%20-%20P%C3%A1gina1.csv')
-    dados_soro = dados_soro.merge(dados_lat_lon, on='Município', how='left')
-    dados_todos_soro = dados_todos[dados_todos['Soro']==soro]
-    fig_estoque = px.scatter_mapbox(dados_soro, lat="lat", lon="lon", hover_name="Município", hover_data=["N° de Ampolas"],
+    #dados_soro = dados_soro.groupby('Município')['N° de Ampolas'].sum().reset_index()
+    #dados_lat_lon = pd.read_csv('https://raw.githubusercontent.com/andrejarenkow/csv/master/Munic%C3%ADpios%20RS%20IBGE6%20Popula%C3%A7%C3%A3o%20CRS%20Regional%20-%20P%C3%A1gina1.csv')
+    #dados_soro = dados_soro.merge(dados_lat_lon, on='Município', how='left')
+    #dados_todos_soro = dados_todos[dados_todos['Soro']==soro]
+    #fig_estoque = px.scatter_mapbox(dados_soro, lat="lat", lon="lon", hover_name="Município", hover_data=["N° de Ampolas"],
                             zoom=5.5, height=600, size="N° de Ampolas", color_discrete_sequence=["#ED5A53"],
                                    )
-    fig_estoque.update_layout(mapbox_style="open-street-map")
-    fig_estoque.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-    st.subheader(f'Locais com estoque de {soro} no RS')
-    coluna_tabela_soro, coluna_mapa_soro = st.columns(2)
-    coluna_mapa_soro.plotly_chart(fig_estoque)
-    coluna_tabela_soro.dataframe(dados_todos_soro.sort_values('Município'), hide_index=True, height=600)
+    #fig_estoque.update_layout(mapbox_style="open-street-map")
+    #fig_estoque.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+    #st.subheader(f'Locais com estoque de {soro} no RS')
+    #coluna_tabela_soro, coluna_mapa_soro = st.columns(2)
+    #coluna_mapa_soro.plotly_chart(fig_estoque)
+    #coluna_tabela_soro.dataframe(dados_todos_soro.sort_values('Município'), hide_index=True, height=600)
 
 
 
