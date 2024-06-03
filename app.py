@@ -418,9 +418,9 @@ with tab_emergencia:
     dados_soro = dados_soro.merge(dados_lat_lon, on='Município', how='left')
     dados_todos_soro = dados_todos[dados_todos['Soro']==soro]
     fig_estoque = px.scatter_mapbox(dados_soro, lat="lat", lon="lon", hover_name="Município", hover_data=["N° de Ampolas"],
-                            zoom=5.5, height=600, size="N° de Ampolas", color_discrete_sequence=["#DBB2FF"],
+                            zoom=5.5, height=600, size="N° de Ampolas", #color_discrete_sequence=["#DBB2FF"],
                                    )
-    fig_estoque.update_layout(mapbox_style="carto-darkmatter")
+    fig_estoque.update_layout(mapbox_style="open-street-map")
     fig_estoque.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     st.subheader(f'Locais com estoque de {soro} no RS')
     coluna_tabela_soro, coluna_mapa_soro = st.columns(2)
