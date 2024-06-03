@@ -419,7 +419,7 @@ with tab3:
     #dados_todos_soro = dados_todos[dados_todos['Soro']==soro]
     #fig_estoque = px.scatter_mapbox(dados_soro, lat="lat", lon="lon", hover_name="Município", hover_data=["N° de Ampolas"],
     #                        zoom=5.5, height=600, size="N° de Ampolas", color_discrete_sequence=["#ED5A53"],
-                                   )
+    #                               )
     #fig_estoque.update_layout(mapbox_style="open-street-map")
     #fig_estoque.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     #st.subheader(f'Locais com estoque de {soro} no RS')
