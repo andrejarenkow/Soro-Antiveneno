@@ -408,7 +408,7 @@ with tab_emergencia:
     }).str.strip()
     
     # Estoque por município
-
+    'O estoque é atualizado diariamente.'
     soro = st.selectbox('Selecione o soro', options=abas, index=0)
     
     dados_soro = dados_todos[dados_todos['Soro']==soro]
